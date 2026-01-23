@@ -37,7 +37,7 @@ const Testimonials = ({ testimonials }) => {
         <div className="mt-12 text-center">
           <p className="text-slate-600 mb-4">Have you worked with us? Share your experience!</p>
           <a 
-            href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review" 
+            href="https://g.page/r/CaPAPpllNcJLEAI/review" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition"
