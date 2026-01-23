@@ -68,79 +68,79 @@
     }
   ],
   "portfolio": [
-    {
-      "id": 1,
-      "url": "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800",
-      "category": "wedding",
-      "title": "Traditional Wedding"
-    },
-    {
-      "id": 2,
-      "url": "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800",
-      "category": "wedding",
-      "title": "Modern Ceremony"
-    },
-    {
-      "id": 3,
-      "url": "https://images.unsplash.com/photo-1530047625168-4b29bfbbe1fc?w=800",
-      "category": "pre-wedding",
-      "title": "Pre-Wedding Shoot"
-    },
-    {
-      "id": 4,
-      "url": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800",
-      "category": "birthday",
-      "title": "Birthday Celebration"
-    },
-    {
-      "id": 5,
-      "url": "https://images.unsplash.com/photo-1587271407850-8d438ca9fdf2?w=800",
-      "category": "event",
-      "title": "Corporate Event"
-    },
-    {
-      "id": 6,
-      "url": "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800",
-      "category": "pre-wedding",
-      "title": "Engagement Session"
-    },
-    {
-      "id": 7,
-      "url": "https://images.unsplash.com/photo-1522673607710-d0f486925809?w=800",
-      "category": "wedding",
-      "title": "Reception Moments"
-    },
-    {
-      "id": 8,
-      "url": "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800",
-      "category": "wedding",
-      "title": "Candid Shots"
-    },
-    {
-      "id": 9,
-      "url": "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800",
-      "category": "event",
-      "title": "Conference Coverage"
-    },
-    {
-      "id": 10,
-      "url": "https://images.unsplash.com/photo-1513151233558-d860c5398176?w=800",
-      "category": "birthday",
-      "title": "Kids Birthday Party"
-    },
-    {
-      "id": 11,
-      "url": "https://images.unsplash.com/photo-1470229538611-16ba8c7ffbd7?w=800",
-      "category": "pre-wedding",
-      "title": "Sunset Romance"
-    },
-    {
-      "id": 12,
-      "url": "https://images.unsplash.com/photo-1460978812857-470ed1c77af0?w=800",
-      "category": "wedding",
-      "title": "Wedding Details"
-    }
-  ],
+  {
+    "id": 1,
+    "url": "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800",
+    "category": "wedding",
+    "title": "Traditional Hindu Wedding Photography Hyderabad"
+  },
+  {
+    "id": 2,
+    "url": "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800",
+    "category": "wedding",
+    "title": "Luxury Wedding Ceremony Candid Photography"
+  },
+  {
+    "id": 3,
+    "url": "https://images.unsplash.com/photo-1530047625168-4b29bfbbe1fc?w=800",
+    "category": "pre-wedding",
+    "title": "Pre-Wedding Couple Shoot Hyderabad Telangana"
+  },
+  {
+    "id": 4,
+    "url": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800",
+    "category": "birthday",
+    "title": "Birthday Party Photography Hyderabad"
+  },
+  {
+    "id": 5,
+    "url": "https://images.unsplash.com/photo-1587271407850-8d438ca9fdf2?w=800",
+    "category": "event",
+    "title": "Corporate Event Photography Hyderabad"
+  },
+  {
+    "id": 6,
+    "url": "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800",
+    "category": "pre-wedding",
+    "title": "Engagement Photoshoot Outdoors Hyderabad"
+  },
+  {
+    "id": 7,
+    "url": "https://images.unsplash.com/photo-1522673607710-d0f486925809?w=800",
+    "category": "wedding",
+    "title": "Wedding Reception Photography Candid Moments"
+  },
+  {
+    "id": 8,
+    "url": "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800",
+    "category": "wedding",
+    "title": "Candid Wedding Photography Hyderabad Telangana"
+  },
+  {
+    "id": 9,
+    "url": "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800",
+    "category": "event",
+    "title": "Professional Conference Event Photography"
+  },
+  {
+    "id": 10,
+    "url": "https://images.unsplash.com/photo-1513151233558-d860c5398176?w=800",
+    "category": "birthday",
+    "title": "Kids Birthday Party Photography Hyderabad"
+  },
+  {
+    "id": 11,
+    "url": "https://images.unsplash.com/photo-1470229538611-16ba8c7ffbd7?w=800",
+    "category": "pre-wedding",
+    "title": "Romantic Sunset Pre-Wedding Shoot Hyderabad"
+  },
+  {
+    "id": 12,
+    "url": "https://images.unsplash.com/photo-1460978812857-470ed1c77af0?w=800",
+    "category": "wedding",
+    "title": "Wedding Detail Photography Rings Decoration Hyderabad"
+  }
+],
   "testimonials": [
     {
       "name": "Priya & Rahul",
