@@ -1,32 +1,38 @@
 import React, { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import Portfolio from './components/Portfolio';
-import Testimonials from './components/Testimonials';
-import About from './components/About';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+
+// Pages
+import HomePage from './pages/HomePage';
+import WeddingPhotographyHyderabad from './pages/WeddingPhotographyHyderabad';
+import WeddingVideographyHyderabad from './pages/WeddingVideographyHyderabad';
+import PreWeddingShootTelangana from './pages/PreWeddingShootTelangana';
+import DestinationWeddingsAndhraPradesh from './pages/DestinationWeddingsAndhraPradesh';
+
+// Blog Pages
+import BlogHome from './pages/blog/BlogHome';
+import BestWeddingSpots from './pages/blog/BestWeddingSpots';
+import PreWeddingLocations from './pages/blog/PreWeddingLocations';
+import HiringPhotographer from './pages/blog/HiringPhotographer';
+import LuxuryPhotographer from './pages/blog/LuxuryPhotographer';
+import TopDestinations from './pages/blog/TopDestinations';
+
+// Local Pages
+import PhotographerWarangal from './pages/local/PhotographerWarangal';
+import VideographerVijayawada from './pages/local/VideographerVijayawada';
+import PhotographerVisakhapatnam from './pages/local/PhotographerVisakhapatnam';
+import PhotographerGuntur from './pages/local/PhotographerGuntur';
 
 function App() {
   const [content, setContent] = useState(null);
 
   useEffect(() => {
-    // Load content from JSON file (acts as simple CMS)
     fetch('/images/content.json')
       .then(res => res.json())
       .then(data => setContent(data))
       .catch(err => console.error('Error loading content:', err));
-
-    // Track page view
-    if (window.gtag) {
-      window.gtag('event', 'page_view', {
-        page_title: 'Home',
-        page_location: window.location.href,
-        page_path: window.location.pathname
-      });
-    }
   }, []);
 
   if (!content) {
@@ -40,12 +46,29 @@ function App() {
   return (
     <div className="min-h-screen bg-slate-50">
       <Header />
-      <Hero slides={content.heroSlides} />
-      <Services services={content.services} />
-      <Portfolio items={content.portfolio} />
-      <Testimonials testimonials={content.testimonials} />
-      <About about={content.about} />
-      <Contact contact={content.contact} />
+      <Routes>
+        <Route path="/" element={<HomePage content={content} />} />
+        
+        {/* Service Pages */}
+        <Route path="/wedding-photography-hyderabad" element={<WeddingPhotographyHyderabad content={content} />} />
+        <Route path="/wedding-videography-hyderabad" element={<WeddingVideographyHyderabad content={content} />} />
+        <Route path="/pre-wedding-shoot-telangana" element={<PreWeddingShootTelangana content={content} />} />
+        <Route path="/destination-weddings-andhra-pradesh" element={<DestinationWeddingsAndhraPradesh content={content} />} />
+        
+        {/* Blog */}
+        <Route path="/blog" element={<BlogHome />} />
+        <Route path="/blog/best-wedding-photo-spots-hyderabad" element={<BestWeddingSpots />} />
+        <Route path="/blog/telangana-pre-wedding-photoshoot-locations" element={<PreWeddingLocations />} />
+        <Route path="/blog/hiring-photographer-hyderabad" element={<HiringPhotographer />} />
+        <Route path="/blog/luxury-wedding-photographer-worth" element={<LuxuryPhotographer />} />
+        <Route path="/blog/top-andhra-pradesh-wedding-destinations" element={<TopDestinations />} />
+        
+        {/* Local Pages */}
+        <Route path="/wedding-photographer-warangal" element={<PhotographerWarangal content={content} />} />
+        <Route path="/wedding-videographer-vijayawada" element={<VideographerVijayawada content={content} />} />
+        <Route path="/wedding-photographer-visakhapatnam" element={<PhotographerVisakhapatnam content={content} />} />
+        <Route path="/wedding-photographer-guntur" element={<PhotographerGuntur content={content} />} />
+      </Routes>
       <Footer contact={content.contact} />
       <WhatsAppButton phone={content.contact.whatsapp} />
     </div>
