@@ -170,15 +170,16 @@
     ],
     "image": "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800"
   },
-  "contact": {
-    "phone": "+91 83749 62192",
-    "whatsapp": "918374962192",
-    "email": "sugurucreations@gmail.com",
-    "location": "Hyderabad, Telangana, India",
-    "social": {
-      "instagram": "https://instagram.com/suguru_weddings",
-      "facebook": "https://facebook.com/suguruweddings",
-      "youtube": "https://youtube.com/@Suguruweddings"
-    }
+ "contact": {
+  "phone": "+91-8374962192",
+  "whatsapp": "918374962192",
+  "email": "info@suguruweddings.com",
+  "location": "Banjara Hills, Hyderabad, Telangana",
+  "fullAddress": "Suguru Weddings, Banjara Hills, Hyderabad, Telangana 500034",
+  "social": {
+    "instagram": "https://instagram.com/suguruweddings",
+    "facebook": "https://facebook.com/suguruweddings",
+    "youtube": "https://youtube.com/@suguruweddings"
   }
+}
 }
