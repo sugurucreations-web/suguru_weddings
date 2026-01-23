@@ -48,10 +48,10 @@ const Hero = ({ slides }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
           <div className="animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              {slides[currentSlide].caption}
+            Premium Wedding Photographer in Hyderabad | {slides[currentSlide].caption}
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-2xl leading-relaxed">
-              Professional photography & videography services in Hyderabad for weddings, events, and celebrations
+            Luxury wedding photography & cinematic videography services in Hyderabad, Telangana & Andhra Pradesh. Candid wedding shoots, pre-wedding photography, and destination wedding coverage from ₹50,000.
             </p>
             <div className="flex flex-wrap gap-4">
               <a 
