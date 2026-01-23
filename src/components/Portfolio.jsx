@@ -71,10 +71,10 @@ const Portfolio = ({ items }) => {
             >
               <img 
                 src={item.url} 
-                alt={item.title} 
+                alt={`${item.title} - Professional ${item.category.replace('-', ' ')} photography by Suguru Weddings Hyderabad`}
                 className="w-full h-64 object-cover group-hover:scale-110 transition duration-500"
                 loading="lazy"
-              />
+                />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition flex flex-col justify-end p-4">
                 <p className="text-white font-bold text-lg">{item.title}</p>
                 <p className="text-white/80 text-sm capitalize">{item.category.replace('-', ' ')}</p>
