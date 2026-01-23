@@ -157,7 +157,7 @@ const Footer = ({ contact }) => {
             &copy; {new Date().getFullYear()} Suguru Weddings. All rights reserved.
           </p>
           <p className="text-slate-500 text-sm mt-2">
-            Made with ❤️ in Hyderabad | <a href="/privacy" className="hover:text-rose-400">Privacy Policy</a> | <a href="/terms" className="hover:text-rose-400">Terms of Service</a>
+            Made with ❤️ by <a href="https://digitalvint.com" className="hover:text-rose-400">Digital Vint</a> | <a href="/privacy" className="hover:text-rose-400">Privacy Policy</a> | <a href="/terms" className="hover:text-rose-400">Terms of Service</a>
           </p>
         </div>
       </div>
