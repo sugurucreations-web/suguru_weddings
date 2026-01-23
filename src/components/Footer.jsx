@@ -20,7 +20,7 @@ const Footer = ({ contact }) => {
 
     // Replace with your Formspree or email service endpoint
     try {
-      await fetch('https://formspree.io/f/YOUR_NEWSLETTER_FORM_ID', {
+      await fetch('https://formspree.io/f/xgoaalnp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, type: 'newsletter' })
