@@ -1,28 +1,27 @@
-```html
-
-
-  
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/camera-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Suguru Weddings - Professional Wedding Photography & Videography in Hyderabad. Capturing your special moments with creativity and passion." />
+    <meta name="keywords" content="wedding photography hyderabad, pre-wedding shoot, birthday photography, event videography, professional photographer hyderabad" />
+    <meta property="og:title" content="Suguru Weddings - Professional Photography & Videography" />
+    <meta property="og:description" content="Capture your special moments with Hyderabad's trusted wedding photographers" />
+    <meta property="og:type" content="website" />
+    <title>Suguru Weddings - Professional Photography & Videography in Hyderabad</title>
     
-    
-    
-    
-    
-    
-    
-    
-    Suguru Weddings - Professional Photography & Videography in Hyderabad
-    
-    
-    
-    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX'); // Replace with your Google Analytics ID
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
     
-    
-    
-    
+    <!-- Meta Pixel Code -->
+    <script>
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
       n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -31,14 +30,15 @@
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', 'YOUR_PIXEL_ID'); // Replace with your Facebook Pixel ID
+      fbq('init', 'YOUR_PIXEL_ID');
       fbq('track', 'PageView');
-    
-    
-  
-  
-    
-    
-  
-
-```
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+    /></noscript>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
