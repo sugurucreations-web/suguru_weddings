@@ -32,7 +32,7 @@ const Contact = ({ contact }) => {
 
     try {
       // Replace with your Formspree endpoint
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      const response = await fetch('https://formspree.io/f/xgoaalnp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
