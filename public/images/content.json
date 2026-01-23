@@ -1,0 +1,184 @@
+{
+  "heroSlides": [
+    {
+      "url": "https://images.unsplash.com/photo-1519741497674-611481863552?w=1600",
+      "caption": "Capturing Your Forever Moments"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=1600",
+      "caption": "Timeless Wedding Photography"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1600",
+      "caption": "Every Emotion, Every Detail"
+    }
+  ],
+  "services": [
+    {
+      "icon": "Heart",
+      "title": "Wedding Photography",
+      "desc": "Complete coverage of your special day with candid and traditional shots",
+      "price": "From ₹50,000",
+      "features": [
+        "Full day coverage",
+        "2 photographers",
+        "500+ edited photos",
+        "Highlight video",
+        "Online gallery"
+      ]
+    },
+    {
+      "icon": "Camera",
+      "title": "Pre & Post Wedding",
+      "desc": "Creative outdoor shoots to capture your love story",
+      "price": "From ₹25,000",
+      "features": [
+        "4 hours shoot",
+        "2 locations",
+        "100+ edited photos",
+        "Cinematic video",
+        "Photo album"
+      ]
+    },
+    {
+      "icon": "Users",
+      "title": "Birthday & Events",
+      "desc": "Professional coverage for all your celebrations",
+      "price": "From ₹15,000",
+      "features": [
+        "4 hours coverage",
+        "1 photographer",
+        "150+ photos",
+        "Same day delivery",
+        "Prints available"
+      ]
+    },
+    {
+      "icon": "Calendar",
+      "title": "Corporate Events",
+      "desc": "High-quality documentation of your business events",
+      "price": "From ₹20,000",
+      "features": [
+        "Full event coverage",
+        "Professional editing",
+        "Quick turnaround",
+        "Video highlights",
+        "Brand watermarking"
+      ]
+    }
+  ],
+  "portfolio": [
+    {
+      "id": 1,
+      "url": "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800",
+      "category": "wedding",
+      "title": "Traditional Wedding"
+    },
+    {
+      "id": 2,
+      "url": "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800",
+      "category": "wedding",
+      "title": "Modern Ceremony"
+    },
+    {
+      "id": 3,
+      "url": "https://images.unsplash.com/photo-1530047625168-4b29bfbbe1fc?w=800",
+      "category": "pre-wedding",
+      "title": "Pre-Wedding Shoot"
+    },
+    {
+      "id": 4,
+      "url": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800",
+      "category": "birthday",
+      "title": "Birthday Celebration"
+    },
+    {
+      "id": 5,
+      "url": "https://images.unsplash.com/photo-1587271407850-8d438ca9fdf2?w=800",
+      "category": "event",
+      "title": "Corporate Event"
+    },
+    {
+      "id": 6,
+      "url": "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800",
+      "category": "pre-wedding",
+      "title": "Engagement Session"
+    },
+    {
+      "id": 7,
+      "url": "https://images.unsplash.com/photo-1522673607710-d0f486925809?w=800",
+      "category": "wedding",
+      "title": "Reception Moments"
+    },
+    {
+      "id": 8,
+      "url": "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800",
+      "category": "wedding",
+      "title": "Candid Shots"
+    },
+    {
+      "id": 9,
+      "url": "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800",
+      "category": "event",
+      "title": "Conference Coverage"
+    },
+    {
+      "id": 10,
+      "url": "https://images.unsplash.com/photo-1513151233558-d860c5398176?w=800",
+      "category": "birthday",
+      "title": "Kids Birthday Party"
+    },
+    {
+      "id": 11,
+      "url": "https://images.unsplash.com/photo-1470229538611-16ba8c7ffbd7?w=800",
+      "category": "pre-wedding",
+      "title": "Sunset Romance"
+    },
+    {
+      "id": 12,
+      "url": "https://images.unsplash.com/photo-1460978812857-470ed1c77af0?w=800",
+      "category": "wedding",
+      "title": "Wedding Details"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Priya & Rahul",
+      "rating": 5,
+      "text": "Suguru Weddings captured our wedding beautifully. Every moment was preserved perfectly! The team was professional and made us feel comfortable throughout.",
+      "event": "Wedding - Dec 2024"
+    },
+    {
+      "name": "Anjali Sharma",
+      "rating": 5,
+      "text": "Amazing pre-wedding shoot! The team made us feel so comfortable and the photos are stunning. Highly recommend for anyone looking for creative photography.",
+      "event": "Pre-Wedding - Nov 2024"
+    },
+    {
+      "name": "Vikram Enterprises",
+      "rating": 5,
+      "text": "Professional and punctual. Great work on our annual conference. The photos captured the energy of the event perfectly.",
+      "event": "Corporate Event - Oct 2024"
+    }
+  ],
+  "about": {
+    "title": "About Suguru Weddings",
+    "paragraphs": [
+      "Based in Hyderabad, we are passionate storytellers who believe every celebration deserves to be captured beautifully. With over 5 years of experience and 500+ successful events, we've mastered the art of preserving your precious moments.",
+      "Our team uses state-of-the-art equipment including 4K cameras, drones, and professional lighting to ensure every shot is perfect. We blend traditional photography with modern techniques to create timeless memories.",
+      "Whether it's an intimate gathering or a grand celebration, we're committed to delivering exceptional quality and unforgettable images that you'll cherish forever."
+    ],
+    "image": "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800"
+  },
+  "contact": {
+    "phone": "+919876543210",
+    "whatsapp": "919876543210",
+    "email": "info@suguruweddings.com",
+    "location": "Hyderabad, Telangana, India",
+    "social": {
+      "instagram": "https://instagram.com/suguruweddings",
+      "facebook": "https://facebook.com/suguruweddings",
+      "youtube": "https://youtube.com/@suguruweddings"
+    }
+  }
+}
