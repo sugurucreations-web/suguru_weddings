@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { MapPin, Camera, ArrowLeft } from "lucide-react";
+import BlogLayout from "../../components/BlogLayout";
 
 const BestWeddingSpots = () => {
   useEffect(() => {
