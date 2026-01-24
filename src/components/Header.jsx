@@ -35,6 +35,7 @@ const Header = () => {
 
   const handleNavClick = (href) => {
     setIsMenuOpen(false);
+    setShowServicesMenu(false);
     if (window.gtag) {
       window.gtag('event', 'navigation_click', {
         event_category: 'Navigation',
