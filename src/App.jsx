@@ -11,7 +11,6 @@ import PreWeddingShootTelangana from './pages/PreWeddingShootTelangana';
 import DestinationWeddingsAndhraPradesh from './pages/DestinationWeddingsAndhraPradesh';
 
 // Local Pages
-import WeddingVideographyHyderabad from './pages/local/WeddingVideographyHyderabad';
 import PhotographerWarangal from './pages/local/PhotographerWarangal';
 import VideographerVijayawada from './pages/local/VideographerVijayawada';
 import PhotographerVisakhapatnam from './pages/local/PhotographerVisakhapatnam';
