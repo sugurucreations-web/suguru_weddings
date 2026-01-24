@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { MapPin, Camera, ArrowLeft } from "lucide-react";
 import BlogLayout from "../../components/BlogLayout";
 
 const BestWeddingSpots = () => {
@@ -22,172 +21,123 @@ const BestWeddingSpots = () => {
       name: "Ramoji Film City",
       type: "Film Studio",
       why: "Multiple themed sets, gardens, palaces, European streets",
-      best: "All day - diverse backdrops available",
+      best: "All day – diverse backdrops available",
       rating: "⭐⭐⭐⭐⭐",
     },
     {
       name: "Golconda Fort",
       type: "Historical Monument",
-      why: "Ancient architecture, stunning sunset views, dramatic backdrops",
+      why: "Ancient architecture, stunning sunset views",
       best: "Sunset photography, architectural shots",
       rating: "⭐⭐⭐⭐",
     },
     {
       name: "Qutub Shahi Tombs",
       type: "Heritage Site",
-      why: "Indo-Persian architecture, beautiful domes, peaceful atmosphere",
+      why: "Indo-Persian architecture, peaceful atmosphere",
       best: "Morning soft light, architectural photography",
       rating: "⭐⭐⭐⭐",
     },
     {
       name: "Hussain Sagar Lake",
       type: "Lakefront",
-      why: "Waterfront views, Buddha statue backdrop, city skyline",
-      best: "Sunset shots, romantic evening photography",
+      why: "Waterfront views, Buddha statue backdrop",
+      best: "Romantic sunset photography",
       rating: "⭐⭐⭐⭐",
     },
     {
-      name: "Durgam Cheruvu (Secret Lake)",
+      name: "Durgam Cheruvu",
       type: "Natural Lake",
-      why: "Unique rock formations, serene waters, less crowded",
-      best: "Sunrise and sunset, nature photography",
+      why: "Unique rock formations, less crowded",
+      best: "Sunrise & sunset shoots",
       rating: "⭐⭐⭐⭐",
     },
     {
       name: "Botanical Garden",
       type: "Gardens",
-      why: "Lush greenery, flower gardens, variety of backdrops",
-      best: "Morning light, garden photography",
+      why: "Lush greenery & flowers",
+      best: "Morning natural light",
       rating: "⭐⭐⭐⭐",
     },
     {
       name: "Shamirpet Lake",
       type: "Lake & Hills",
-      why: "Peaceful location, scenic landscapes, less urban",
-      best: "Pre-wedding shoots, outdoor sessions",
+      why: "Scenic landscapes, peaceful vibe",
+      best: "Pre-wedding outdoor sessions",
       rating: "⭐⭐⭐⭐",
     },
   ];
 
   return (
-    <div className="blog-page">
-      {/* Back Link */}
-      <div className="container">
-        <Link to="/blog" className="back-link">
-          <ArrowLeft size={18} /> Back to Blog
+    <BlogLayout
+      title="Best Wedding Photo Spots in Hyderabad (2025 Guide)"
+      date="January 20, 2025"
+      author="Suguru Weddings Team"
+      readTime="8 min read"
+      image="/images/blog/hyderabad-wedding.jpg"
+    >
+      <p>
+        Hyderabad offers a perfect blend of heritage, modern architecture,
+        and natural beauty—making it one of the best cities in India for
+        wedding photography.
+      </p>
+
+      <h2>Why Location Matters for Wedding Photography</h2>
+      <p>
+        The right location can transform your wedding photos from ordinary
+        to extraordinary. A beautiful backdrop adds depth, emotion, and
+        storytelling to every frame.
+      </p>
+
+      <h2>Top Wedding Photo Locations in Hyderabad</h2>
+
+      {spots.map((spot, idx) => (
+        <div key={idx}>
+          <h3>
+            {idx + 1}. {spot.name} {spot.rating}
+          </h3>
+          <ul>
+            <li><strong>Type:</strong> {spot.type}</li>
+            <li><strong>Why we love it:</strong> {spot.why}</li>
+            <li><strong>Best for:</strong> {spot.best}</li>
+          </ul>
+        </div>
+      ))}
+
+      <h2>Pro Tips for Shooting at These Locations</h2>
+      <ul>
+        <li>Get permits early for heritage locations</li>
+        <li>Plan shoots during golden hours</li>
+        <li>Visit locations in advance</li>
+        <li>Hire experienced local photographers</li>
+      </ul>
+
+      <h2>Choosing the Right Location for Your Wedding Style</h2>
+      <ul>
+        <li><strong>Traditional weddings:</strong> Golconda Fort, Qutub Shahi Tombs</li>
+        <li><strong>Luxury weddings:</strong> Taj Falaknuma Palace</li>
+        <li><strong>Nature lovers:</strong> Shamirpet, Durgam Cheruvu</li>
+        <li><strong>Cinematic shoots:</strong> Ramoji Film City</li>
+      </ul>
+
+      <div className="mt-12 p-6 bg-rose-50 rounded-xl">
+        <h3>Need Help Planning Your Wedding Photography?</h3>
+        <p>
+          Suguru Weddings has photographed weddings at all these locations.
+          We manage permits, timelines, and personalized shot lists.
+        </p>
+        <Link to="/contact" className="text-rose-600 font-semibold">
+          Book a consultation →
         </Link>
       </div>
 
-      {/* Header */}
-      <header className="blog-header container">
-        <h1>Best Wedding Photo Spots in Hyderabad (2025 Guide)</h1>
-
-        <p className="blog-meta">
-          January 20, 2025 • By Suguru Weddings Team • 8 min read
-        </p>
-      </header>
-
-      {/* Content */}
-      <main className="blog-content container">
-        <p>
-          Hyderabad offers a perfect blend of heritage, modern architecture, and
-          natural beauty—making it an ideal city for stunning wedding
-          photography. As professional wedding photographers who've shot at
-          500+ locations across the city, we're sharing our top picks for the
-          best wedding photo spots in Hyderabad.
-        </p>
-
-        <h2>Why Location Matters for Wedding Photography</h2>
-        <p>
-          The right location can transform your wedding photos from ordinary to
-          extraordinary. A beautiful backdrop adds depth, character, and visual
-          interest to your images. Whether you prefer historic monuments, luxury
-          hotels, or natural landscapes, Hyderabad has it all.
-        </p>
-
-        <h2>Top 8 Wedding Photo Locations in Hyderabad</h2>
-
-        <div className="spots-list">
-          {spots.map((spot, idx) => (
-            <div key={idx} className="spot-card">
-              <h3>
-                {idx + 1}. {spot.name} {spot.rating}
-              </h3>
-              <p>
-                <strong>Type:</strong> {spot.type}
-              </p>
-              <p>
-                <strong>Why we love it:</strong> {spot.why}
-              </p>
-              <p>
-                <strong>Best for:</strong> {spot.best}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        <h2>Pro Tips for Shooting at These Locations</h2>
-        <ul>
-          <li>Get permits: Many heritage sites require photography permits.</li>
-          <li>
-            Visit at the right time: Golden hours give the best natural light.
-          </li>
-          <li>
-            Scout beforehand: Visit locations before the wedding day to plan
-            shots.
-          </li>
-          <li>
-            Hire professionals: Local photographers know these locations
-            inside-out.
-          </li>
-        </ul>
-
-        <h2>Choosing the Right Location for Your Wedding Style</h2>
-        <ul>
-          <li>
-            <strong>Traditional Telugu Wedding:</strong> Qutub Shahi Tombs,
-            Golconda Fort
-          </li>
-          <li>
-            <strong>Luxury Modern Wedding:</strong> Taj Falaknuma Palace
-          </li>
-          <li>
-            <strong>Nature-Loving Couples:</strong> Shamirpet Lake, Durgam
-            Cheruvu, Botanical Garden
-          </li>
-          <li>
-            <strong>Cinematic Shoots:</strong> Ramoji Film City
-          </li>
-        </ul>
-
-        <section className="cta-box">
-          <h2>Need Help Planning Your Wedding Photography?</h2>
-          <p>
-            At Suguru Weddings, we've photographed weddings at all these
-            locations. We handle permits, timing, and create a customized shot
-            list for every couple.
-          </p>
-          <Link to="/contact" className="cta-button">
-            Book a Consultation
-          </Link>
-        </section>
-
-        <h2>Conclusion</h2>
-        <p>
-          Hyderabad is blessed with incredible diversity in wedding photography
-          locations—from royal palaces to serene lakes and historic monuments.
-          Choose locations that resonate with your story and work with
-          experienced photographers who know how to make the most of them.
-        </p>
-
-        <div className="final-cta">
-          <h3>Ready to start planning your wedding photography?</h3>
-          <Link to="/contact" className="cta-button">
-            Contact Suguru Weddings
-          </Link>
-        </div>
-      </main>
-    </div>
+      <h2>Final Thoughts</h2>
+      <p>
+        Hyderabad is blessed with incredible diversity in wedding photography
+        locations. Choosing the right venue and the right photographer
+        ensures timeless wedding memories.
+      </p>
+    </BlogLayout>
   );
 };
 
