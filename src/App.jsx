@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
@@ -25,9 +25,9 @@ import HiringPhotographer from './pages/blog/HiringPhotographer';
 import LuxuryPhotographer from './pages/blog/LuxuryPhotographer';
 import TopDestinations from './pages/blog/TopDestinations';
 
-
 function App() {
   const [content, setContent] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
     fetch('/images/content.json')
@@ -35,6 +35,20 @@ function App() {
       .then(data => setContent(data))
       .catch(err => console.error('Error loading content:', err));
   }, []);
+
+  // Handle hash navigation and scroll to sections
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
 
   if (!content) {
     return (
