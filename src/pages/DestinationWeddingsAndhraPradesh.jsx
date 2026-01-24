@@ -223,14 +223,49 @@ const DestinationWeddingsAndhraPradesh = ({ content }) => {
               Transparent pricing with no hidden costs. Travel and accommodation included in all packages.
             </p>
             
-            <div className="max-w-5xl mx-auto space-y-6">
-              {[
-                {
-                  name: "2-
-                }
-      }]
+           {/* Packages */}
+          <div id="packages" className="mb-16">
+            <h2 className="text-3xl font-bold text-center mb-4">Pre-Wedding Photoshoot Packages</h2>
+            <p className="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
+              Choose the perfect package for your pre-wedding shoot. All packages include professional editing and online gallery.
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {packages.map((pkg, idx) => (
+                <div key={idx} className={`rounded-2xl p-8 ${pkg.popular ? 'bg-gradient-to-br from-rose-600 to-pink-600 text-white shadow-2xl scale-105' : 'bg-white border-2 border-slate-200'}`}>
+                  {pkg.popular && (
+                    <div className="bg-white text-rose-600 text-sm font-bold px-4 py-1 rounded-full inline-block mb-4">
+                      MOST POPULAR
                     </div>
-
+                  )}
+                  <h3 className={`text-2xl font-bold mb-2 ${pkg.popular ? 'text-white' : 'text-slate-800'}`}>
+                    {pkg.name}
+                  </h3>
+                  <p className={`text-4xl font-bold mb-6 ${pkg.popular ? 'text-white' : 'text-rose-600'}`}>
+                    {pkg.price}
+                  </p>
+                  <ul className="space-y-3 mb-8">
+                    {pkg.features.map((feature, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <Check className={`h-5 w-5 mt-0.5 ${pkg.popular ? 'text-white' : 'text-rose-600'}`} />
+                        <span className={pkg.popular ? 'text-white' : 'text-slate-700'}>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link 
+                    to="/#contact"
+                    className={`block text-center py-3 rounded-lg font-semibold transition ${
+                      pkg.popular 
+                        ? 'bg-white text-rose-600 hover:bg-slate-100' 
+                        : 'bg-rose-600 text-white hover:bg-rose-700'
+                    }`}
+                  >
+                    Book This Package
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
                     
                   {/* CTA */}
           <div className="bg-gradient-to-r from-rose-600 to-pink-600 rounded-2xl p-12 text-center text-white">
