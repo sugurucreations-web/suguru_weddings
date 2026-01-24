@@ -6,6 +6,11 @@ import WhatsAppButton from './components/WhatsAppButton';
 
 // Pages
 import HomePage from './pages/HomePage';
+import WeddingPhotographyHyderabad from './pages/WeddingPhotographyHyderabad';
+import PreWeddingShootTelangana from './pages/PreWeddingShootTelangana';
+import DestinationWeddingsAndhraPradesh from './pages/DestinationWeddingsAndhraPradesh';
+
+// Local Pages
 import WeddingVideographyHyderabad from './pages/local/WeddingVideographyHyderabad';
 import PhotographerWarangal from './pages/local/PhotographerWarangal';
 import VideographerVijayawada from './pages/local/VideographerVijayawada';
