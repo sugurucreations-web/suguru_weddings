@@ -67,7 +67,6 @@ function App() {
         <Route path="/wedding-photography-hyderabad" element={<WeddingPhotographyHyderabad content={content} />} />
         <Route path="/wedding-videography-hyderabad" element={<WeddingVideographyHyderabad content={content} />} />
         <Route path="/pre-wedding-shoot-telangana" element={<PreWeddingShootTelangana content={content} />} />
-        <Route path="/destination-weddings-andhra-pradesh" element={<DestinationWeddingsAndhraPradesh content={content} />} />
         
         {/* Blog */}
         <Route path="/blog" element={<BlogHome />} />
@@ -75,7 +74,6 @@ function App() {
         <Route path="/blog/telangana-pre-wedding-photoshoot-locations" element={<PreWeddingLocations />} />
         <Route path="/blog/hiring-photographer-hyderabad" element={<HiringPhotographer />} />
         <Route path="/blog/luxury-wedding-photographer-worth" element={<LuxuryPhotographer />} />
-        <Route path="/blog/top-andhra-pradesh-wedding-destinations" element={<TopDestinations />} />
         
         {/* Local Pages */}
         <Route path="/wedding-photographer-warangal" element={<PhotographerWarangal content={content} />} />
