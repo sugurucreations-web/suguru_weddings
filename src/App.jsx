@@ -9,7 +9,7 @@ import HomePage from './pages/HomePage';
 import WeddingPhotographyHyderabad from './pages/WeddingPhotographyHyderabad';
 import PreWeddingShootTelangana from './pages/PreWeddingShootTelangana';
 import DestinationWeddingsAndhraPradesh from './pages/DestinationWeddingsAndhraPradesh';
-import DestinationWeddingsAndhraPradesh from './pages/WeddingVideographyHyderabad';
+import WeddingVideographyHyderabad from './pages/WeddingVideographyHyderabad';
 
 // Local Pages
 import PhotographerWarangal from './pages/local/PhotographerWarangal';
