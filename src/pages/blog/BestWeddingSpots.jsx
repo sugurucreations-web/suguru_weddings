@@ -12,59 +12,67 @@ const BestWeddingSpots = () => {
   const spots = [
     {
       name: "Taj Falaknuma Palace",
-      type: "Luxury Hotel",
-      why: "Grand architecture, royal interiors, panoramic city views",
-      best: "Evening golden hour shots, palace exteriors, royal halls",
-      rating: "⭐⭐⭐⭐⭐",
+      image: "/images/spots/taj-falaknuma.jpg",
+      type: "Luxury Heritage Palace",
+      why: "Royal architecture, regal interiors, panoramic city views",
+      best: "Luxury weddings & golden hour portraits",
+      rating: "★★★★★",
     },
     {
       name: "Ramoji Film City",
+      image: "/images/spots/ramoji-film-city.jpg",
       type: "Film Studio",
-      why: "Multiple themed sets, gardens, palaces, European streets",
-      best: "All day – diverse backdrops available",
-      rating: "⭐⭐⭐⭐⭐",
+      why: "Multiple themed sets, palaces, gardens & European streets",
+      best: "Cinematic wedding photography",
+      rating: "★★★★★",
     },
     {
       name: "Golconda Fort",
+      image: "/images/spots/golconda-fort.jpg",
       type: "Historical Monument",
-      why: "Ancient architecture, stunning sunset views",
-      best: "Sunset photography, architectural shots",
-      rating: "⭐⭐⭐⭐",
+      why: "Ancient architecture & dramatic sunset views",
+      best: "Epic sunset & heritage shots",
+      rating: "★★★★☆",
     },
     {
       name: "Qutub Shahi Tombs",
+      image: "/images/spots/qutub-shahi-tombs.jpg",
       type: "Heritage Site",
-      why: "Indo-Persian architecture, peaceful atmosphere",
-      best: "Morning soft light, architectural photography",
-      rating: "⭐⭐⭐⭐",
+      why: "Indo-Persian domes & peaceful atmosphere",
+      best: "Morning soft-light photography",
+      rating: "★★★★☆",
     },
     {
       name: "Hussain Sagar Lake",
+      image: "/images/spots/hussain-sagar.jpg",
       type: "Lakefront",
-      why: "Waterfront views, Buddha statue backdrop",
-      best: "Romantic sunset photography",
-      rating: "⭐⭐⭐⭐",
+      why: "Waterfront views with Buddha statue backdrop",
+      best: "Romantic sunset portraits",
+      rating: "★★★★☆",
     },
     {
       name: "Durgam Cheruvu",
+      image: "/images/spots/durgam-cheruvu.jpg",
       type: "Natural Lake",
-      why: "Unique rock formations, less crowded",
-      best: "Sunrise & sunset shoots",
-      rating: "⭐⭐⭐⭐",
+      why: "Unique rock formations & serene environment",
+      best: "Nature-inspired pre-wedding shoots",
+      rating: "★★★★☆",
     },
     {
       name: "Botanical Garden",
+      image: "/images/spots/botanical-garden.jpg",
       type: "Gardens",
-      why: "Lush greenery & flowers",
-      best: "Morning natural light",
-      rating: "⭐⭐⭐⭐",
+      why: "Lush greenery & colorful floral backdrops",
+      best: "Fresh daylight photography",
+      rating: "★★★★☆",
     },
     {
       name: "Shamirpet Lake",
+      image: "/images/spots/shamirpet-lake.jpg",
       type: "Lake & Hills",
-      why: "Scenic landscapes, peaceful vibe",
-      best: "Pre-wedding outdoor sessions",
-      rating: "⭐⭐⭐⭐",
+      why: "Scenic landscapes away from the city",
+      best: "Outdoor & pre-wedding sessions",
+      rating: "★★★★☆",
     },
   ];
 
@@ -76,66 +84,99 @@ const BestWeddingSpots = () => {
       readTime="8 min read"
       image="/images/blog/hyderabad-wedding.jpg"
     >
-      <p>
-        Hyderabad offers a perfect blend of heritage, modern architecture,
-        and natural beauty—making it one of the best cities in India for
-        wedding photography.
+      {/* INTRO */}
+      <p className="text-xl leading-relaxed">
+        Hyderabad offers a perfect blend of heritage, royal architecture,
+        modern landmarks, and natural beauty—making it one of the best cities
+        in India for wedding photography.
       </p>
 
       <h2>Why Location Matters for Wedding Photography</h2>
       <p>
-        The right location can transform your wedding photos from ordinary
-        to extraordinary. A beautiful backdrop adds depth, emotion, and
+        The right location can elevate wedding photos from ordinary to
+        extraordinary. A strong backdrop adds emotion, scale, and timeless
         storytelling to every frame.
       </p>
 
+      <hr className="my-20" />
+
       <h2>Top Wedding Photo Locations in Hyderabad</h2>
 
+      {/* SPOTS */}
       {spots.map((spot, idx) => (
-        <div key={idx}>
-          <h3>
-            {idx + 1}. {spot.name} {spot.rating}
-          </h3>
-          <ul>
-            <li><strong>Type:</strong> {spot.type}</li>
-            <li><strong>Why we love it:</strong> {spot.why}</li>
-            <li><strong>Best for:</strong> {spot.best}</li>
-          </ul>
+        <div
+          key={idx}
+          className="not-prose grid md:grid-cols-2 gap-10 items-center my-24"
+        >
+          <img
+            src={spot.image}
+            alt={spot.name}
+            className="w-full h-[420px] object-cover rounded-3xl shadow-xl"
+            loading="lazy"
+          />
+
+          <div>
+            <h3 className="text-3xl font-semibold mb-3">
+              {idx + 1}. {spot.name}
+            </h3>
+
+            <div className="text-rose-600 text-lg mb-5">
+              {spot.rating}
+            </div>
+
+            <p className="mb-3">
+              <strong>Type:</strong> {spot.type}
+            </p>
+            <p className="mb-3">
+              <strong>Why we love it:</strong> {spot.why}
+            </p>
+            <p>
+              <strong>Best for:</strong> {spot.best}
+            </p>
+          </div>
         </div>
       ))}
 
+      <hr className="my-24" />
+
       <h2>Pro Tips for Shooting at These Locations</h2>
       <ul>
-        <li>Get permits early for heritage locations</li>
-        <li>Plan shoots during golden hours</li>
-        <li>Visit locations in advance</li>
-        <li>Hire experienced local photographers</li>
+        <li>Apply for permits well in advance for heritage sites</li>
+        <li>Schedule shoots during early mornings or golden hours</li>
+        <li>Scout locations beforehand to plan compositions</li>
+        <li>Work with experienced local photographers</li>
       </ul>
 
       <h2>Choosing the Right Location for Your Wedding Style</h2>
       <ul>
         <li><strong>Traditional weddings:</strong> Golconda Fort, Qutub Shahi Tombs</li>
         <li><strong>Luxury weddings:</strong> Taj Falaknuma Palace</li>
-        <li><strong>Nature lovers:</strong> Shamirpet, Durgam Cheruvu</li>
+        <li><strong>Nature-loving couples:</strong> Shamirpet Lake, Durgam Cheruvu</li>
         <li><strong>Cinematic shoots:</strong> Ramoji Film City</li>
       </ul>
 
-      <div className="mt-12 p-6 bg-rose-50 rounded-xl">
-        <h3>Need Help Planning Your Wedding Photography?</h3>
-        <p>
-          Suguru Weddings has photographed weddings at all these locations.
-          We manage permits, timelines, and personalized shot lists.
+      {/* CTA */}
+      <div className="not-prose bg-rose-600 text-white rounded-3xl p-12 mt-28 text-center">
+        <h3 className="text-3xl font-bold mb-4">
+          Planning Your Wedding in Hyderabad?
+        </h3>
+        <p className="text-lg mb-8 opacity-90">
+          Suguru Weddings has photographed luxury and traditional weddings
+          across all these locations.
         </p>
-        <Link to="/contact" className="text-rose-600 font-semibold">
-          Book a consultation →
+        <Link
+          to="/contact"
+          className="inline-block bg-white text-rose-600 px-10 py-4 rounded-full font-semibold"
+        >
+          Book a Consultation
         </Link>
       </div>
 
-      <h2>Final Thoughts</h2>
+      <h2 className="mt-24">Final Thoughts</h2>
       <p>
-        Hyderabad is blessed with incredible diversity in wedding photography
-        locations. Choosing the right venue and the right photographer
-        ensures timeless wedding memories.
+        Hyderabad offers unmatched diversity in wedding photography locations.
+        With the right venue and the right photographer, your wedding memories
+        become truly timeless.
       </p>
     </BlogLayout>
   );
