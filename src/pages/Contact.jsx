@@ -6,7 +6,16 @@ const Contact = ({ content }) => {
     document.title = "Contact Us - Suguru Weddings";
   }, []);
 
-  if (!content) return null;
+  // 🛡️ HARD GUARD
+  if (!content || !content.contact) {
+    return (
+      <div className="pt-28 text-center">
+        Loading contact details...
+      </div>
+    );
+  }
+
+  const { phone, email, location, whatsapp } = content.contact;
 
   return (
     <div className="pt-28 pb-24 bg-slate-50">
@@ -16,65 +25,31 @@ const Contact = ({ content }) => {
         </h1>
 
         <p className="text-lg text-gray-600 mb-10">
-          Let’s discuss your wedding photography and videography requirements.
+          Let’s discuss your wedding photography and videography needs.
         </p>
 
         <div className="bg-white rounded-2xl shadow-lg p-8">
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Contact Info */}
             <div>
               <h2 className="text-xl font-semibold mb-4">
                 Contact Details
               </h2>
 
               <p className="mb-3">
-                📞 <strong>Phone:</strong> {content.contact.phone}
+                📞 <strong>Phone:</strong> {phone || "Available on request"}
               </p>
 
               <p className="mb-3">
-                ✉️ <strong>Email:</strong> {content.contact.email}
+                ✉️ <strong>Email:</strong> {email || "info@suguruweddings.com"}
               </p>
 
               <p className="mb-3">
-                📍 <strong>Location:</strong> {content.contact.location}
+                📍 <strong>Location:</strong> {location || "Hyderabad"}
               </p>
-            </div>
 
-            {/* Simple Form (UI only) */}
-            <div>
-              <h2 className="text-xl font-semibold mb-4">
-                Send a Message
-              </h2>
-
-              <form className="space-y-4">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="w-full border rounded-lg px-4 py-3"
-                />
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  className="w-full border rounded-lg px-4 py-3"
-                />
-                <textarea
-                  rows="4"
-                  placeholder="Tell us about your wedding"
-                  className="w-full border rounded-lg px-4 py-3"
-                />
-                <button
-                  type="button"
-                  className="bg-rose-600 text-white px-6 py-3 rounded-full font-semibold"
-                >
-                  Submit
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Contact;
+              {whatsapp && (
+                <a
+                  href={`https://wa.me/${whatsapp}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-block mt-4
