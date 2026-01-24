@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import Contact from "./pages/Contact";
 
 // Pages
 import HomePage from './pages/HomePage';
@@ -72,6 +73,7 @@ function App() {
       </Routes>
       <Footer contact={content.contact} />
       <WhatsAppButton phone={content.contact.whatsapp} />
+      <Route path="/contact" element={<Contact content={content} />} />
     </div>
   );
 }
