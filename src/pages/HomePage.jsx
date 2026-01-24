@@ -13,7 +13,6 @@ const HomePage = ({ content }) => {
       <Portfolio items={content.portfolio} />
       <Testimonials testimonials={content.testimonials} />
       <About about={content.about} />
-      <Contact contact={content.contact} />
     </>
   );
 };
