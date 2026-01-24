@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage';
 import WeddingPhotographyHyderabad from './pages/WeddingPhotographyHyderabad';
 import PreWeddingShootTelangana from './pages/PreWeddingShootTelangana';
 import WeddingVideographyHyderabad from './pages/WeddingVideographyHyderabad';
+import DestinationWeddingsAndhraPradesh from './pages/DestinationWeddingsAndhraPradesh';
 
 // Local Pages
 import PhotographerWarangal from './pages/local/PhotographerWarangal';
@@ -67,6 +68,7 @@ function App() {
         <Route path="/wedding-photography-hyderabad" element={<WeddingPhotographyHyderabad content={content} />} />
         <Route path="/wedding-videography-hyderabad" element={<WeddingVideographyHyderabad content={content} />} />
         <Route path="/pre-wedding-shoot-telangana" element={<PreWeddingShootTelangana content={content} />} />
+        <Route path="/destination-weddings-andhrapradesh" element={<DestinationWeddingsAndhraPradesh content={content} />} />
         
         {/* Blog */}
         <Route path="/blog" element={<BlogHome />} />
