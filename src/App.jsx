@@ -8,7 +8,6 @@ import WhatsAppButton from './components/WhatsAppButton';
 import HomePage from './pages/HomePage';
 import WeddingPhotographyHyderabad from './pages/WeddingPhotographyHyderabad';
 import PreWeddingShootTelangana from './pages/PreWeddingShootTelangana';
-import DestinationWeddingsAndhraPradesh from './pages/DestinationWeddingsAndhraPradesh';
 import WeddingVideographyHyderabad from './pages/WeddingVideographyHyderabad';
 
 // Local Pages
