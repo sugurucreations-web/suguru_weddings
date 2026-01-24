@@ -20,12 +20,6 @@ import HiringPhotographer from './pages/blog/HiringPhotographer';
 import LuxuryPhotographer from './pages/blog/LuxuryPhotographer';
 import TopDestinations from './pages/blog/TopDestinations';
 
-// Local Pages
-import PhotographerWarangal from './pages/local/PhotographerWarangal';
-import VideographerVijayawada from './pages/local/VideographerVijayawada';
-import PhotographerVisakhapatnam from './pages/local/PhotographerVisakhapatnam';
-import PhotographerGuntur from './pages/local/PhotographerGuntur';
-
 function App() {
   const [content, setContent] = useState(null);
 
