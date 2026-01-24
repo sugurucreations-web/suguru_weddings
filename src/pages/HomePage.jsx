@@ -4,7 +4,6 @@ import Services from '../components/Services';
 import Portfolio from '../components/Portfolio';
 import Testimonials from '../components/Testimonials';
 import About from '../components/About';
-import Contact from '../components/Contact';
 
 const HomePage = ({ content }) => {
   return (
