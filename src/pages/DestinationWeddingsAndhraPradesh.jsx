@@ -227,3 +227,26 @@ const DestinationWeddingsAndhraPradesh = ({ content }) => {
               {[
                 {
                   name: "2-
+                    </div>
+                  {/* CTA */}
+          <div className="bg-gradient-to-r from-rose-600 to-pink-600 rounded-2xl p-12 text-center text-white">
+            <h2 className="text-4xl font-bold mb-4">Ready for Your Pre-Wedding Shoot?</h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto">
+              Let's create beautiful memories together. Book your pre-wedding photoshoot in Telangana today!
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link to="/#contact" className="bg-white text-rose-600 px-8 py-4 rounded-full font-bold hover:bg-slate-100 transition">
+                Book Now
+              </Link>
+              <a href="tel:+919876543210" className="bg-white/20 backdrop-blur-sm hover:bg-white/30 px-8 py-4 rounded-full font-bold transition">
+                Call Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default DestinationWeddingsAndhraPradesh;
