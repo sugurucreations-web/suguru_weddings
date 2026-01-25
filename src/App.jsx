@@ -76,6 +76,7 @@ function App() {
         <Route path="/blog/telangana-pre-wedding-photoshoot-locations" element={<PreWeddingLocations />} />
         <Route path="/blog/hiring-photographer-hyderabad" element={<HiringPhotographer />} />
         <Route path="/blog/luxury-wedding-photographer-worth" element={<LuxuryPhotographer />} />
+        <Route path="/blog/top-andhra-pradesh-wedding-destinations" element={<TopDestinations />} />
         
         {/* Local Pages */}
         <Route path="/wedding-photographer-warangal" element={<PhotographerWarangal content={content} />} />
