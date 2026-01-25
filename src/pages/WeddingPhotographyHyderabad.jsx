@@ -262,7 +262,7 @@ const WeddingPhotographyHyderabad = ({ content }) => {
           <div className="mt-16 bg-gradient-to-r from-rose-600 to-pink-600 rounded-2xl p-12 text-center text-white">
             <h2 className="text-4xl font-bold mb-4">Ready to Book Your Wedding Photographer?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Limited dates available for 2025-2026. Book early to secure your preferred wedding date.
+              Limited dates available for 2026-2027. Book early to secure your preferred wedding date.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/#contact" className="bg-white text-rose-600 px-8 py-4 rounded-full font-bold hover:bg-slate-100 transition">
