@@ -12,7 +12,7 @@ const HomePage = ({ content }) => {
     <>
       <Hero slides={content.heroSlides} />
       <Services services={content.services} />
-      <LocalAreasSection services={content.LocalAreasSection} />
+      <LocalAreasSection />
       <Portfolio items={content.portfolio} />
       <Testimonials testimonials={content.testimonials} />
       <About about={content.about} />
