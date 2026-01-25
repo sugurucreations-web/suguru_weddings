@@ -68,7 +68,7 @@ function App() {
         <Route path="/wedding-photography-hyderabad" element={<WeddingPhotographyHyderabad content={content} />} />
         <Route path="/wedding-videography-hyderabad" element={<WeddingVideographyHyderabad content={content} />} />
         <Route path="/pre-wedding-shoot-telangana" element={<PreWeddingShootTelangana content={content} />} />
-        <Route path="/destination-weddings-andhrapradesh" element={<DestinationWeddingsAndhraPradesh content={content} />} />
+        <Route path="/destination-weddings-andhra-pradesh" element={<DestinationWeddingsAndhraPradesh content={content} />} />
         
         {/* Blog */}
         <Route path="/blog" element={<BlogHome />} />
