@@ -14,7 +14,7 @@ const BlogHome = () => {
       excerpt: "Discover the most stunning locations for wedding photography in Hyderabad. From heritage monuments to modern venues.",
       slug: "best-wedding-photo-spots-hyderabad",
       image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800",
-      date: "Jan 20, 2025",
+      date: "Jan 20, 2026",
       readTime: "8 min read"
     },
     {
@@ -22,7 +22,7 @@ const BlogHome = () => {
       excerpt: "Top 15 romantic locations for pre-wedding shoots across Telangana including Ramoji Film City and hidden gems.",
       slug: "telangana-pre-wedding-photoshoot-locations",
       image: "https://images.unsplash.com/photo-1530047625168-4b29bfbbe1fc?w=800",
-      date: "Jan 18, 2025",
+      date: "Jan 18, 2026",
       readTime: "10 min read"
     },
     {
@@ -30,7 +30,7 @@ const BlogHome = () => {
       excerpt: "Essential tips and questions to ask when choosing the perfect wedding photographer for your big day.",
       slug: "hiring-photographer-hyderabad",
       image: "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800",
-      date: "Jan 15, 2025",
+      date: "Jan 15, 2026",
       readTime: "7 min read"
     },
     {
@@ -38,7 +38,7 @@ const BlogHome = () => {
       excerpt: "Understanding the value of premium wedding photography services and why they're worth the investment.",
       slug: "luxury-wedding-photographer-worth",
       image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=800",
-      date: "Jan 12, 2025",
+      date: "Jan 12, 2026",
       readTime: "6 min read"
     },
     {
@@ -46,7 +46,7 @@ const BlogHome = () => {
       excerpt: "Beautiful wedding venues across Andhra Pradesh for destination weddings - from beaches to temples.",
       slug: "top-andhra-pradesh-wedding-destinations",
       image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800",
-      date: "Jan 10, 2025",
+      date: "Jan 10, 2026",
       readTime: "9 min read"
     }
   ];
