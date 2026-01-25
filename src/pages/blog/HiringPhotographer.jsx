@@ -27,7 +27,7 @@ const HiringPhotographer = () => {
           </h1>
           
           <div className="flex items-center gap-4 text-slate-600 mb-8 pb-8 border-b">
-            <span>January 15, 2025</span>
+            <span>January 15, 2026</span>
             <span>•</span>
             <span>By Suguru Weddings Team</span>
             <span>•</span>
