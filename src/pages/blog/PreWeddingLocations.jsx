@@ -5,7 +5,7 @@ import { MapPin, Heart, ArrowLeft } from 'lucide-react';
 const PreWeddingLocations = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Telangana Pre-Wedding Photoshoot Locations 2025 - Suguru Weddings";
+    document.title = "Telangana Pre-Wedding Photoshoot Locations 2026 - Suguru Weddings";
   }, []);
 
   const locations = [
@@ -61,11 +61,11 @@ const PreWeddingLocations = () => {
           />
 
           <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
-            Top 15 Pre-Wedding Photoshoot Locations in Telangana (2025)
+            Top 15 Pre-Wedding Photoshoot Locations in Telangana (2026)
           </h1>
           
           <div className="flex items-center gap-4 text-slate-600 mb-8 pb-8 border-b">
-            <span>January 18, 2025</span>
+            <span>January 18, 2026</span>
             <span>•</span>
             <span>By Suguru Weddings Team</span>
             <span>•</span>
