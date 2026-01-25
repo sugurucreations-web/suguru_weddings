@@ -5,7 +5,7 @@ import { MapPin, Star, Plane, ArrowLeft } from 'lucide-react';
 const TopDestinations = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Top Andhra Pradesh Wedding Destinations 2025 - Suguru Weddings";
+    document.title = "Top Andhra Pradesh Wedding Destinations 2026 - Suguru Weddings";
   }, []);
 
   const destinations = [
@@ -96,11 +96,11 @@ const TopDestinations = () => {
           />
 
           <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
-            Top 5 Wedding Destinations in Andhra Pradesh (2025 Guide)
+            Top 5 Wedding Destinations in Andhra Pradesh (2026 Guide)
           </h1>
           
           <div className="flex items-center gap-4 text-slate-600 mb-8 pb-8 border-b">
-            <span>January 10, 2025</span>
+            <span>January 10, 2026</span>
             <span>•</span>
             <span>By Suguru Weddings Team</span>
             <span>•</span>
