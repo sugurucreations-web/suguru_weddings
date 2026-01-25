@@ -53,7 +53,7 @@ const DestinationWeddingsAndhraPradesh = ({ content }) => {
             <p className="text-xl md:text-2xl mb-8 max-w-3xl">
               Professional wedding photography for destination weddings across Andhra Pradesh. From beaches to hills, temples to resorts - we capture your special moments anywhere.
             </p>
-            <Link to="/#contact" className="inline-block bg-rose-600 hover:bg-rose-700 px-8 py-4 rounded-lg font-semibold flex items-center gap-2 w-fit">
+            <Link to="/#contact" className="inline-flex items-center gap-2 bg-rose-600 hover:bg-rose-700 px-8 py-4 rounded-lg font-semibold">
               <Plane className="h-5 w-5" />
               Plan Your Destination Wedding
             </Link>
@@ -223,62 +223,188 @@ const DestinationWeddingsAndhraPradesh = ({ content }) => {
               Transparent pricing with no hidden costs. Travel and accommodation included in all packages.
             </p>
             
-           {/* Packages */}
-          <div id="packages" className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-4">Pre-Wedding Photoshoot Packages</h2>
-            <p className="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
-              Choose the perfect package for your pre-wedding shoot. All packages include professional editing and online gallery.
-            </p>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              {packages.map((pkg, idx) => (
-                <div key={idx} className={`rounded-2xl p-8 ${pkg.popular ? 'bg-gradient-to-br from-rose-600 to-pink-600 text-white shadow-2xl scale-105' : 'bg-white border-2 border-slate-200'}`}>
-                  {pkg.popular && (
-                    <div className="bg-white text-rose-600 text-sm font-bold px-4 py-1 rounded-full inline-block mb-4">
-                      MOST POPULAR
+            <div className="max-w-5xl mx-auto space-y-6">
+              {[
+                {
+                  name: "2-Day Destination Wedding",
+                  price: "₹1,20,000",
+                  features: [
+                    "Complete 2-day coverage (all events)",
+                    "2 photographers + 2 videographers",
+                    "800+ edited photos",
+                    "10-15 min cinematic film",
+                    "Drone coverage",
+                    "Premium albums (2 copies)",
+                    "All travel & stay included",
+                    "Same-day highlights"
+                  ]
+                },
+                {
+                  name: "3-Day Destination Wedding",
+                  price: "₹1,80,000",
+                  popular: true,
+                  features: [
+                    "Complete 3-day coverage (pre-wedding to reception)",
+                    "3 photographers + 3 videographers",
+                    "1200+ edited photos",
+                    "20-30 min feature wedding film",
+                    "Drone + gimbal coverage",
+                    "Luxury albums (3 copies)",
+                    "All travel & accommodation",
+                    "Daily highlight reels",
+                    "Save-the-date video"
+                  ]
+                },
+                {
+                  name: "Extended Destination Wedding (4+ Days)",
+                  price: "Custom Quote",
+                  features: [
+                    "Full event coverage (all days)",
+                    "Full photography & videography team",
+                    "Unlimited edited photos",
+                    "Multiple cinematic films",
+                    "Complete aerial coverage",
+                    "Multiple album sets",
+                    "Complete travel arrangements",
+                    "Real-time social media coverage",
+                    "Documentary-style coverage"
+                  ]
+                }
+              ].map((pkg, idx) => (
+                <div key={idx} className={`rounded-2xl p-8 ${pkg.popular ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-2xl' : 'bg-white border-2 border-slate-200'}`}>
+                  <div className="flex items-center justify-between mb-6">
+                    <div>
+                      {pkg.popular && (
+                        <div className="bg-white text-blue-600 text-sm font-bold px-4 py-1 rounded-full inline-block mb-2">
+                          MOST POPULAR
+                        </div>
+                      )}
+                      <h3 className={`text-2xl font-bold ${pkg.popular ? 'text-white' : 'text-slate-800'}`}>
+                        {pkg.name}
+                      </h3>
                     </div>
-                  )}
-                  <h3 className={`text-2xl font-bold mb-2 ${pkg.popular ? 'text-white' : 'text-slate-800'}`}>
-                    {pkg.name}
-                  </h3>
-                  <p className={`text-4xl font-bold mb-6 ${pkg.popular ? 'text-white' : 'text-rose-600'}`}>
-                    {pkg.price}
-                  </p>
-                  <ul className="space-y-3 mb-8">
+                    <div className={`text-4xl font-bold ${pkg.popular ? 'text-white' : 'text-blue-600'}`}>
+                      {pkg.price}
+                    </div>
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-3">
                     {pkg.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <Check className={`h-5 w-5 mt-0.5 ${pkg.popular ? 'text-white' : 'text-rose-600'}`} />
-                        <span className={pkg.popular ? 'text-white' : 'text-slate-700'}>{feature}</span>
-                      </li>
+                      <div key={i} className="flex items-start gap-2">
+                        <Check className={`h-5 w-5 mt-0.5 flex-shrink-0 ${pkg.popular ? 'text-white' : 'text-blue-600'}`} />
+                        <span className={`text-sm ${pkg.popular ? 'text-white' : 'text-slate-700'}`}>{feature}</span>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                   <Link 
                     to="/#contact"
-                    className={`block text-center py-3 rounded-lg font-semibold transition ${
+                    className={`block text-center py-3 rounded-lg font-semibold transition mt-6 ${
                       pkg.popular 
-                        ? 'bg-white text-rose-600 hover:bg-slate-100' 
-                        : 'bg-rose-600 text-white hover:bg-rose-700'
+                        ? 'bg-white text-blue-600 hover:bg-slate-100' 
+                        : 'bg-blue-600 text-white hover:bg-blue-700'
                     }`}
                   >
-                    Book This Package
+                    Get Detailed Quote
                   </Link>
                 </div>
               ))}
             </div>
           </div>
-                    
-                  {/* CTA */}
-          <div className="bg-gradient-to-r from-rose-600 to-pink-600 rounded-2xl p-12 text-center text-white">
-            <h2 className="text-4xl font-bold mb-4">Ready for Your Destination Wedding Shoot?</h2>
+
+          {/* Process */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-center mb-12">Our Destination Wedding Process</h2>
+            <div className="max-w-4xl mx-auto">
+              <div className="space-y-6">
+                {[
+                  {
+                    step: "1",
+                    title: "Initial Consultation",
+                    desc: "We discuss your destination, venue, schedule, and photography preferences. Share your vision and we'll plan accordingly."
+                  },
+                  {
+                    step: "2",
+                    title: "Location Scouting",
+                    desc: "We visit the destination 1-2 days early to scout the venue, find the best photo spots, and plan shots based on lighting."
+                  },
+                  {
+                    step: "3",
+                    title: "Event Coverage",
+                    desc: "Our team captures every ceremony, ritual, and candid moment throughout your multi-day celebration."
+                  },
+                  {
+                    step: "4",
+                    title: "Post-Production",
+                    desc: "Professional editing, color grading, and cinematic production of your photos and videos."
+                  },
+                  {
+                    step: "5",
+                    title: "Delivery",
+                    desc: "Receive your edited photos, films, albums, and all raw footage via cloud link and physical drives."
+                  }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex gap-6 bg-slate-50 p-6 rounded-xl hover:shadow-lg transition">
+                    <div className="flex-shrink-0">
+                      <div className="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">
+                        {item.step}
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-xl mb-2">{item.title}</h3>
+                      <p className="text-slate-600">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* FAQ */}
+          <div className="mb-16 bg-white rounded-2xl p-8 border-2 border-slate-100">
+            <h2 className="text-3xl font-bold text-center mb-12">Destination Wedding FAQs</h2>
+            <div className="max-w-3xl mx-auto space-y-6">
+              {[
+                {
+                  q: "Do you charge extra for travel to destination weddings?",
+                  a: "No hidden charges! Travel and accommodation costs are included in our destination wedding packages. The quoted price is what you pay."
+                },
+                {
+                  q: "How early should we book for a destination wedding?",
+                  a: "We recommend booking 6-8 months in advance for destination weddings to ensure availability and proper planning."
+                },
+                {
+                  q: "Can you arrange permits for beach or monument photography?",
+                  a: "Yes, we handle all necessary permits and permissions for shooting at beaches, monuments, or heritage sites."
+                },
+                {
+                  q: "What if weather conditions are bad?",
+                  a: "We always have backup plans for outdoor shoots. Our team is experienced in adapting to weather conditions and finding alternative solutions."
+                },
+                {
+                  q: "Do you cover destinations outside Andhra Pradesh?",
+                  a: "Absolutely! While we specialize in AP destinations, we cover weddings across India. Contact us for custom quotes."
+                }
+              ].map((faq, idx) => (
+                <div key={idx} className="border-l-4 border-blue-600 pl-6 py-2">
+                  <h3 className="font-bold text-lg mb-2 text-slate-800">{faq.q}</h3>
+                  <p className="text-slate-600 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-12 text-center text-white">
+            <h2 className="text-4xl font-bold mb-4">Planning a Destination Wedding?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Let's create beautiful memories together. Book your destination wedding shoot in Andhrapradesh today!
+              Let's discuss your destination wedding photography needs. We'll create a custom package that fits your celebration perfectly.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/#contact" className="bg-white text-rose-600 px-8 py-4 rounded-full font-bold hover:bg-slate-100 transition">
-                Book Now
+              <Link to="/#contact" className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-slate-100 transition">
+                <Plane className="h-5 w-5" />
+                Get Custom Quote
               </Link>
               <a href="tel:+919876543210" className="bg-white/20 backdrop-blur-sm hover:bg-white/30 px-8 py-4 rounded-full font-bold transition">
-                Call Us
+                Call: +91 XXXXX XXXXX
               </a>
             </div>
           </div>
