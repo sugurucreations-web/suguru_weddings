@@ -5,7 +5,7 @@ import { MapPin, Camera, ArrowLeft } from 'lucide-react';
 const BestWeddingSpots = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Best Wedding Photo Spots in Hyderabad 2025 - Suguru Weddings";
+    document.title = "Best Wedding Photo Spots in Hyderabad 2026 - Suguru Weddings";
   }, []);
 
   const spots = [
@@ -82,11 +82,11 @@ const BestWeddingSpots = () => {
           />
 
           <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
-            Best Wedding Photo Spots in Hyderabad (2025 Guide)
+            Best Wedding Photo Spots in Hyderabad (2026 Guide)
           </h1>
           
           <div className="flex items-center gap-4 text-slate-600 mb-8 pb-8 border-b">
-            <span>January 20, 2025</span>
+            <span>January 20, 2026</span>
             <span>•</span>
             <span>By Suguru Weddings Team</span>
             <span>•</span>
