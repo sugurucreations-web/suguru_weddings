@@ -212,3 +212,26 @@ const VideographerVijayawada = ({ content }) => {
                       : 'bg-blue-600 text-white hover:bg-blue-700'
                   }`}
                 >
+                  Book Now
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="text-center bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-12 text-white">
+          <h2 className="text-4xl font-bold mb-4">Book Your Vijayawada Wedding Videographer</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Create cinematic wedding films in Vijayawada. Contact us for packages and availability.
+          </p>
+          <Link to="/#contact" className="inline-block bg-white text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-slate-100 transition">
+            Get Free Consultation
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default VideographerVijayawada;
