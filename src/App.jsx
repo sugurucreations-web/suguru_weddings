@@ -3,6 +3,8 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 
 // Pages
 import HomePage from './pages/HomePage';
@@ -77,6 +79,10 @@ function App() {
         <Route path="/blog/hiring-photographer-hyderabad" element={<HiringPhotographer />} />
         <Route path="/blog/luxury-wedding-photographer-worth" element={<LuxuryPhotographer />} />
         <Route path="/blog/top-andhra-pradesh-wedding-destinations" element={<TopDestinations />} />
+        
+        {/* Footer links */}
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
         
         {/* Local Pages */}
         <Route path="/wedding-photographer-warangal" element={<PhotographerWarangal content={content} />} />
