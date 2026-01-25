@@ -105,4 +105,81 @@ const HiringPhotographer = () => {
               <li>Number of photographers and assistants</li>
               <li>Coverage hours (8 hours vs full day vs multi-day)</li>
               <li>Number of edited photos delivered</li>
-              <li>Album
+              <li>Album quality and printing</li>
+              <li>Video coverage and editing</li>
+              <li>Travel costs for destination weddings</li>
+            </ul>
+
+            <h2 className="text-3xl font-bold text-slate-800 mt-12 mb-6">5. Read the Contract Carefully</h2>
+            <p className="text-slate-700 leading-relaxed mb-4">
+              Ensure your contract includes:
+            </p>
+            <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 my-6">
+              <ul className="space-y-2 text-slate-700">
+                <li>✓ Date, time, and location details</li>
+                <li>✓ Number of photographers and hours of coverage</li>
+                <li>✓ Number of edited photos to be delivered</li>
+                <li>✓ Delivery timeline</li>
+                <li>✓ Payment schedule</li>
+                <li>✓ Cancellation and refund policy</li>
+                <li>✓ Copyright and usage rights</li>
+                <li>✓ Backup photographer clause</li>
+              </ul>
+            </div>
+
+            <h2 className="text-3xl font-bold text-slate-800 mt-12 mb-6">6. Meet in Person</h2>
+            <p className="text-slate-700 leading-relaxed mb-6">
+              You'll spend your entire wedding day with your photographer. It's important that you're comfortable with them and that they understand your vision. Schedule a face-to-face meeting or video call before booking.
+            </p>
+
+            <h2 className="text-3xl font-bold text-slate-800 mt-12 mb-6">7. Check Equipment Backup</h2>
+            <p className="text-slate-700 leading-relaxed mb-6">
+              Professional photographers should have backup cameras, lenses, memory cards, and batteries. Equipment failure shouldn't ruin your wedding photos. Ask about their backup equipment and contingency plans.
+            </p>
+
+            <h2 className="text-3xl font-bold text-slate-800 mt-12 mb-6">8. Understand Editing Timeline</h2>
+            <p className="text-slate-700 leading-relaxed mb-6">
+              Standard delivery time in Hyderabad is 4-6 weeks for edited photos. Some photographers offer express delivery for additional cost. Confirm the timeline and what happens if they miss the deadline.
+            </p>
+
+            <h2 className="text-3xl font-bold text-slate-800 mt-12 mb-6">9. Clarify Ownership Rights</h2>
+            <p className="text-slate-700 leading-relaxed mb-6">
+              Most photographers retain copyright but grant you usage rights for personal use. Clarify if you can:
+            </p>
+            <ul className="list-disc list-inside space-y-2 text-slate-700 mb-6 ml-4">
+              <li>Print photos yourself</li>
+              <li>Share on social media</li>
+              <li>Use for commercial purposes</li>
+              <li>Receive raw/unedited files</li>
+            </ul>
+
+            <h2 className="text-3xl font-bold text-slate-800 mt-12 mb-6">10. Trust Your Instincts</h2>
+            <p className="text-slate-700 leading-relaxed mb-6">
+              Beyond technical skills and packages, trust your gut feeling. Choose a photographer whose work resonates with you and who makes you feel comfortable and confident.
+            </p>
+
+            <div className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-xl p-8 my-12 border border-rose-200">
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">Looking for a Photographer in Hyderabad?</h3>
+              <p className="text-slate-700 mb-6">
+                At Suguru Weddings, we're transparent about our process, pricing, and deliverables. Schedule a free consultation to see our full portfolio and discuss your wedding photography needs.
+              </p>
+              <Link 
+                to="/#contact"
+                className="inline-block bg-rose-600 hover:bg-rose-700 text-white px-8 py-3 rounded-full font-semibold transition"
+              >
+                Schedule Consultation
+              </Link>
+            </div>
+
+            <h2 className="text-3xl font-bold text-slate-800 mt-12 mb-6">Conclusion</h2>
+            <p className="text-slate-700 leading-relaxed">
+              Hiring the right photographer requires research, planning, and clear communication. Don't rush the decision. Start your search 6-8 months before your wedding, meet multiple photographers, compare packages, and choose someone who understands your vision and makes you feel comfortable. Your wedding photos will be cherished for generations - make sure you're working with someone who will capture them beautifully.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  );
+};
+
+export default HiringPhotographer;
