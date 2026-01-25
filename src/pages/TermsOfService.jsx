@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const TermsOfService = () => {
   return (
@@ -188,12 +187,12 @@ const TermsOfService = () => {
 
           {/* Back to Home Link */}
           <div className="mt-12 pt-8 border-t border-gray-200 text-center">
-            <Link 
-              to="/" 
+            <a 
+              href="/" 
               className="inline-block bg-rose-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-rose-700 transition-colors"
             >
               Back to Home
-            </Link>
+            </a>
           </div>
         </div>
       </div>
