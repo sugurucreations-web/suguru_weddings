@@ -61,28 +61,27 @@ const Header = () => {
               item.submenu ? (
                 <div 
                   key={item.name}
-                  className="relative"
-                  onMouseEnter={() => setShowServicesMenu(true)}
-                  onMouseLeave={() => setShowServicesMenu(false)}
+                  className="relative group"
                 >
-                  <button className="text-slate-700 hover:text-rose-600 font-medium transition flex items-center gap-1">
+                  <button className="text-slate-700 hover:text-rose-600 font-medium transition flex items-center gap-1 py-2">
                     {item.name}
                     <ChevronDown className="h-4 w-4" />
                   </button>
-                  {showServicesMenu && (
-                    <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-xl rounded-lg py-2 animate-slide-up">
+                  {/* FIXED: Added invisible bridge and group-hover */}
+                  <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="w-64 bg-white shadow-xl rounded-lg py-2 border border-slate-100">
                       {item.submenu.map((subItem) => (
                         <Link
                           key={subItem.name}
                           to={subItem.href}
                           onClick={() => handleNavClick(subItem.href)}
-                          className="block px-4 py-2 text-slate-700 hover:bg-rose-50 hover:text-rose-600 transition"
+                          className="block px-4 py-3 text-slate-700 hover:bg-rose-50 hover:text-rose-600 transition"
                         >
                           {subItem.name}
                         </Link>
                       ))}
                     </div>
-                  )}
+                  </div>
                 </div>
               ) : (
                 <Link
