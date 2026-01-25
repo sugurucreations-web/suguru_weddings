@@ -5,12 +5,14 @@ import Portfolio from '../components/Portfolio';
 import Testimonials from '../components/Testimonials';
 import About from '../components/About';
 import Contact from '../components/Contact';
+import LocalAreasSection from '../components/LocalAreasSection';
 
 const HomePage = ({ content }) => {
   return (
     <>
       <Hero slides={content.heroSlides} />
       <Services services={content.services} />
+      <Local LocalAreasSection={content.LocalAreaSection} />
       <Portfolio items={content.portfolio} />
       <Testimonials testimonials={content.testimonials} />
       <About about={content.about} />
@@ -18,5 +20,4 @@ const HomePage = ({ content }) => {
     </>
   );
 };
-
 export default HomePage;
