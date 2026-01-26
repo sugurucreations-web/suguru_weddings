@@ -9,7 +9,7 @@
       "caption": "Timeless Wedding Photography"
     },
     {
-      "url": "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1600",
+      "url": "https://res.cloudinary.com/dgrs2upav/image/upload/v1769436965/DSC08589.jpg_erq6nz.jpg",
       "caption": "Every Emotion, Every Detail"
     }
   ],
@@ -76,7 +76,7 @@
   },
   {
     "id": 2,
-    "url": "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800",
+    "url": "https://res.cloudinary.com/dgrs2upav/image/upload/v1769436947/DSC00147.jpg_gxh22f.jpg",
     "category": "wedding",
     "title": "Luxury Wedding Ceremony Candid Photography"
   },
@@ -94,7 +94,7 @@
   },
   {
     "id": 5,
-    "url": "https://images.unsplash.com/photo-1587271407850-8d438ca9fdf2?w=800",
+    "url": "https://res.cloudinary.com/dgrs2upav/image/upload/v1769436965/DSC08589.jpg_erq6nz.jpg",
     "category": "event",
     "title": "Corporate Event Photography Hyderabad"
   },
@@ -106,7 +106,7 @@
   },
   {
     "id": 7,
-    "url": "https://images.unsplash.com/photo-1522673607710-d0f486925809?w=800",
+    "url": "https://res.cloudinary.com/dgrs2upav/image/upload/v1769436956/DSC00164.jpg_dua8fh.jpg",
     "category": "wedding",
     "title": "Wedding Reception Photography Candid Moments"
   },
