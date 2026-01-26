@@ -70,7 +70,7 @@
   "portfolio": [
   {
     "id": 1,
-    "url": "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800",
+    "url": "https://res.cloudinary.com/dgrs2upav/image/upload/v1769436190/DSC00147.jpg_gn4wnn.jpg",
     "category": "wedding",
     "title": "Traditional Hindu Wedding Photography Hyderabad"
   },
@@ -82,7 +82,7 @@
   },
   {
     "id": 3,
-    "url": "https://images.unsplash.com/photo-1530047625168-4b29bfbbe1fc?w=800",
+    "url": "https://res.cloudinary.com/dgrs2upav/image/upload/v1769436200/DSC09308.jpg_olz5gf.jpg",
     "category": "pre-wedding",
     "title": "Pre-Wedding Couple Shoot Hyderabad Telangana"
   },
