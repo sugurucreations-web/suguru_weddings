@@ -11,43 +11,53 @@ const WeddingPhotographyHyderabad = ({ content }) => {
   const packages = [
     {
       name: "Classic Wedding Package",
-      price: "₹50,000",
+      price: "₹80,000",
       features: [
-        "8 hours coverage",
-        "1 professional photographer",
-        "300+ edited photos",
-        "Online gallery",
-        "Wedding album (20 pages)",
-        "All raw files"
+        "1 Traditional photographer",
+        "1 Traditional videographer",
+        "1 Candid photographer",
+        "30 Sheets of album",
+        "1 highlighted video ",
+        "1 full length video",
+        "6 hours full coverage",
+        "All Raw files"
       ]
     },
     {
       name: "Premium Wedding Package",
-      price: "₹85,000",
+      price: "₹1,50,000",
       popular: true,
       features: [
-        "Full day coverage (12 hours)",
-        "2 professional photographers",
-        "500+ edited photos",
-        "Cinematic highlight video (3-5 min)",
-        "Luxury wedding album (40 pages)",
-        "All raw files",
-        "Engagement shoot included"
+        "1 Traditional photographer",
+        "1 Traditional videographer",
+        "1 Candid photographer",
+	      "1 Cinematic videographer",
+	      "1 Drone",
+        "50 Sheets of album",
+        "1 highlighted video 4-5 min ",
+        "1 full length video",
+        "12 hours full coverage",
+        "All Raw files"
       ]
     },
     {
       name: "Luxury Wedding Package",
-      price: "₹1,50,000",
+      price: "₹2,50,000",
       features: [
-        "Full event coverage (2 days)",
-        "3 professional photographers",
-        "1000+ edited photos",
-        "Full wedding film (20-30 min)",
-        "Premium album (60 pages)",
-        "All raw files",
-        "Pre-wedding shoot included",
-        "Drone coverage",
-        "Same-day highlights"
+        "1 Traditional photographer",
+        "1 Traditional videographer",
+        "1 Candid photographer",
+	      "1 Cinematic videographer",
+	      "1 Drone",
+        "60 Sheets of album",
+        "1 highlighted video 4-5 min ",
+        "1 full length video",
+	      "3 different event full coverage shoot like (Haldi + wedding + Reception)",
+	      "1 LED screen 8/12
+        "12 hours full coverage",
+        "All Raw files",
+	      "Pre wedding shoot included",
+	      "1 Hard drive"
       ]
     }
   ];
@@ -74,7 +84,7 @@ const WeddingPhotographyHyderabad = ({ content }) => {
               <a href="#packages" className="bg-rose-600 hover:bg-rose-700 px-8 py-4 rounded-lg font-semibold flex items-center gap-2">
                 View Packages <ArrowRight className="h-5 w-5" />
               </a>
-              <a href="tel:+919876543210" className="bg-white/20 backdrop-blur-sm hover:bg-white/30 px-8 py-4 rounded-lg font-semibold flex items-center gap-2">
+              <a href="tel:+918374962192" className="bg-white/20 backdrop-blur-sm hover:bg-white/30 px-8 py-4 rounded-lg font-semibold flex items-center gap-2">
                 <Phone className="h-5 w-5" /> Call Now
               </a>
             </div>
@@ -268,8 +278,8 @@ const WeddingPhotographyHyderabad = ({ content }) => {
               <Link to="/#contact" className="bg-white text-rose-600 px-8 py-4 rounded-full font-bold hover:bg-slate-100 transition">
                 Get Free Consultation
               </Link>
-              <a href="tel:+919876543210" className="bg-white/20 backdrop-blur-sm hover:bg-white/30 px-8 py-4 rounded-full font-bold transition">
-                Call: +91 XXXXX XXXXX
+              <a href="tel:+918374962192" className="bg-white/20 backdrop-blur-sm hover:bg-white/30 px-8 py-4 rounded-full font-bold transition">
+                Call: +91 83749 62192
               </a>
             </div>
           </div>
