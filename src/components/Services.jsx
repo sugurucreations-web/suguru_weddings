@@ -3,7 +3,7 @@ import { Heart, Camera, Users, Calendar, Award, Clock, CheckCircle, Video } from
 
 const Services = ({ services }) => {
   const whyChooseUs = [
-    { icon: Award, title: '5+ Years Experience', desc: 'Trusted by 500+ couples' },
+    { icon: Award, title: '9+ Years Experience', desc: 'Trusted by 500+ couples' },
     { icon: Clock, title: '24/7 Support', desc: 'Always here for you' },
     { icon: CheckCircle, title: '100% Satisfaction', desc: 'Quality guaranteed' },
     { icon: Video, title: 'Latest Equipment', desc: '4K & drone coverage' }
