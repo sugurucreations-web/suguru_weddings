@@ -144,7 +144,7 @@ const WeddingPhotographyHyderabad = ({ content }) => {
                 className="rounded-2xl shadow-2xl mb-6"
               />
               <img 
-                src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=800"
+                src="https://res.cloudinary.com/dgrs2upav/image/upload/v1769616640/DSC09529.jpg_somxvp.jpg"
                 alt="Traditional Telugu wedding photography"
                 className="rounded-2xl shadow-2xl"
               />
