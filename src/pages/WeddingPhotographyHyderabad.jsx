@@ -115,7 +115,7 @@ const WeddingPhotographyHyderabad = ({ content }) => {
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-rose-600 mt-1" />
-                    <span>5+ years serving Hyderabad's premium weddings</span>
+                    <span>9+ years serving Hyderabad's premium weddings</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-rose-600 mt-1" />
