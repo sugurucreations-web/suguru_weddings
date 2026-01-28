@@ -17,7 +17,7 @@ const WeddingPhotographyHyderabad = ({ content }) => {
         "1 Traditional videographer",
         "1 Candid photographer",
         "30 Sheets of album",
-        "1 highlighted video ",
+        "1 highlighted video",
         "1 full length video",
         "6 hours full coverage",
         "All Raw files"
@@ -34,7 +34,7 @@ const WeddingPhotographyHyderabad = ({ content }) => {
 	      "1 Cinematic videographer",
 	      "1 Drone",
         "50 Sheets of album",
-        "1 highlighted video 4-5 min ",
+        "1 highlighted video 4-5 min",
         "1 full length video",
         "12 hours full coverage",
         "All Raw files"
@@ -53,7 +53,7 @@ const WeddingPhotographyHyderabad = ({ content }) => {
         "1 highlighted video 4-5 min ",
         "1 full length video",
 	      "3 different event full coverage shoot like (Haldi + wedding + Reception)",
-	      "1 LED screen 8/12
+	      "1 LED screen 8/12",
         "12 hours full coverage",
         "All Raw files",
 	      "Pre wedding shoot included",
