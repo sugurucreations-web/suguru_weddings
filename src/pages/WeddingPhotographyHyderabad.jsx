@@ -67,7 +67,7 @@ const WeddingPhotographyHyderabad = ({ content }) => {
       {/* Hero Section */}
       <section className="relative h-[70vh] mt-16">
         <img 
-          src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1600" 
+          src="https://res.cloudinary.com/dgrs2upav/image/upload/v1769616023/DSC09131.jpg_m5mtsp.jpg" 
           alt="Wedding Photography in Hyderabad by Suguru Weddings"
           className="w-full h-full object-cover"
         />
@@ -139,7 +139,7 @@ const WeddingPhotographyHyderabad = ({ content }) => {
 
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=800"
+                src="https://res.cloudinary.com/dgrs2upav/image/upload/v1769616067/DSC09634.jpg_wnm9bf.jpg"
                 alt="Candid wedding photography Hyderabad"
                 className="rounded-2xl shadow-2xl mb-6"
               />
