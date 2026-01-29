@@ -156,7 +156,7 @@ const PreWeddingShootTelangana = ({ content }) => {
 
             <div className="space-y-6">
               <img 
-                src="https://res.cloudinary.com/dgrs2upav/image/upload/v1769698323/DSC05781.JPG_da7wpd.jpg"
+                src="https://res.cloudinary.com/dgrs2upav/image/upload/v1769698338/DSC04518__01.jpg_g5ghoj.jpg"
                 alt="Romantic pre-wedding photography Hyderabad"
                 className="rounded-2xl shadow-2xl"
               />
