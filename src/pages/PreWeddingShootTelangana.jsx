@@ -9,14 +9,19 @@ const PreWeddingShootTelangana = ({ content }) => {
   }, []);
 
   const locations = [
-    { name: "Ramoji Film City", desc: "Multiple themed sets and beautiful gardens" },
-    { name: "Hussain Sagar Lake", desc: "Scenic waterfront with sunset views" },
-    { name: "Golconda Fort", desc: "Historic architecture and panoramic views" },
-    { name: "Qutub Shahi Tombs", desc: "Ancient monuments with unique backdrops" },
-    { name: "Shamirpet Lake", desc: "Peaceful lakeside location" },
-    { name: "Ananthagiri Hills", desc: "Lush greenery and misty landscapes" },
-    { name: "NTR Gardens", desc: "Beautiful landscaped gardens" },
-    { name: "Durgam Cheruvu", desc: "Secret lake with rock formations" }
+    { name: "Ramoji Film City", desc: "Multiple themed sets and beautiful gardens", type: "outdoor" },
+    { name: "Nizam Film City", desc: "Professional film sets and cinematic backdrops", type: "outdoor" },
+    { name: "Hussain Sagar Lake", desc: "Scenic waterfront with sunset views", type: "outdoor" },
+    { name: "Golconda Fort", desc: "Historic architecture and panoramic views", type: "outdoor" },
+    { name: "Qutub Shahi Tombs", desc: "Ancient monuments with unique backdrops", type: "outdoor" },
+    { name: "Raw Studio", desc: "Industrial chic space with modern aesthetics", type: "indoor" },
+    { name: "Len Studio", desc: "Contemporary indoor studio with creative setups", type: "indoor" },
+    { name: "The Foto Garage", desc: "Trendy studio with versatile shooting spaces", type: "indoor" },
+    { name: "Sri Sita Rama Chandra Swami Temple", desc: "Traditional temple with stunning architecture", type: "outdoor" },
+    { name: "Shamirpet Lake", desc: "Peaceful lakeside location", type: "outdoor" },
+    { name: "Ananthagiri Hills", desc: "Lush greenery and misty landscapes", type: "outdoor" },
+    { name: "NTR Gardens", desc: "Beautiful landscaped gardens", type: "outdoor" },
+    { name: "Durgam Cheruvu", desc: "Secret lake with rock formations", type: "outdoor" }
   ];
 
   const packages = [
@@ -102,7 +107,7 @@ const PreWeddingShootTelangana = ({ content }) => {
                 Pre-wedding photoshoots are the perfect way to celebrate your love story before the wedding chaos begins. At Suguru Weddings, we specialize in creating romantic, creative, and natural pre-wedding photos that capture your unique chemistry as a couple.
               </p>
               <p className="text-slate-600 mb-4 leading-relaxed">
-                Whether you dream of a romantic outdoor shoot at Ananthagiri Hills, a grand photoshoot at Ramoji Film City, or an urban session in Hyderabad's modern locations, we bring your vision to life with creative concepts and expert photography.
+                Whether you dream of a romantic outdoor shoot at Ananthagiri Hills, a grand photoshoot at Ramoji Film City or Nizam Film City, an indoor studio session at Raw Studio, Len Studio, or The Foto Garage, or a traditional setting at Sri Sita Rama Chandra Swami Temple, we bring your vision to life with creative concepts and expert photography.
               </p>
               <p className="text-slate-600 mb-6 leading-relaxed">
                 Our pre-wedding shoots are designed to be fun, relaxed, and natural. We help you feel comfortable in front of the camera so your genuine emotions and love shine through every photograph.
@@ -117,7 +122,7 @@ const PreWeddingShootTelangana = ({ content }) => {
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-rose-600 mt-1" />
-                    <span>1-3 beautiful locations in Telangana</span>
+                    <span>1-3 beautiful locations in Telangana (outdoor & indoor studios)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-rose-600 mt-1" />
@@ -167,14 +172,19 @@ const PreWeddingShootTelangana = ({ content }) => {
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-center mb-4">Popular Pre-Wedding Shoot Locations in Telangana</h2>
             <p className="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
-              From historic monuments to scenic lakes, Telangana offers stunning backdrops for your pre-wedding photoshoot.
+              From historic monuments to modern studios, Telangana offers stunning backdrops for your pre-wedding photoshoot. Choose from outdoor locations or professional indoor studios.
             </p>
             <div className="grid md:grid-cols-4 gap-6">
               {locations.map((loc, idx) => (
                 <div key={idx} className="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-rose-600 hover:shadow-lg transition">
                   <MapPin className="h-8 w-8 text-rose-600 mb-3" />
                   <h3 className="font-bold text-lg mb-2">{loc.name}</h3>
-                  <p className="text-sm text-slate-600">{loc.desc}</p>
+                  <p className="text-sm text-slate-600 mb-2">{loc.desc}</p>
+                  <span className={`inline-block text-xs px-2 py-1 rounded-full ${
+                    loc.type === 'indoor' ? 'bg-blue-100 text-blue-700' : 'bg-green-100 text-green-700'
+                  }`}>
+                    {loc.type === 'indoor' ? 'Indoor Studio' : 'Outdoor Location'}
+                  </span>
                 </div>
               ))}
             </div>
