@@ -75,7 +75,7 @@ const PreWeddingShootTelangana = ({ content }) => {
       {/* Hero */}
       <section className="relative h-[70vh] mt-16">
         <img 
-          src="https://images.unsplash.com/photo-1530047625168-4b29bfbbe1fc?w=1600" 
+          src="https://res.cloudinary.com/dgrs2upav/image/upload/v1769698146/DSC096431.jpg_m12akk.jpg" 
           alt="Pre-Wedding Photoshoot in Telangana"
           className="w-full h-full object-cover"
         />
