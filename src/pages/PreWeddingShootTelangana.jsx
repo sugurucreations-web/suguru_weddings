@@ -156,12 +156,12 @@ const PreWeddingShootTelangana = ({ content }) => {
 
             <div className="space-y-6">
               <img 
-                src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800"
+                src="https://res.cloudinary.com/dgrs2upav/image/upload/v1769698323/DSC05781.JPG_da7wpd.jpg"
                 alt="Romantic pre-wedding photography Hyderabad"
                 className="rounded-2xl shadow-2xl"
               />
               <img 
-                src="https://images.unsplash.com/photo-1470229538611-16ba8c7ffbd7?w=800"
+                src="https://res.cloudinary.com/dgrs2upav/image/upload/v1769698323/DSC05781.JPG_da7wpd.jpg"
                 alt="Couple photoshoot Telangana"
                 className="rounded-2xl shadow-2xl"
               />
