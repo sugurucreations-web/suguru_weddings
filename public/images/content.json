@@ -18,39 +18,41 @@
       "icon": "Heart",
       "title": "Wedding Photography",
       "desc": "Complete coverage of your special day with candid and traditional shots",
-      "price": "From ₹50,000",
+      "price": "From ₹1,00,000",
       "features": [
-        "Full day coverage",
-        "2 photographers",
-        "500+ edited photos",
-        "Highlight video",
-        "Online gallery"
+      "1 Traditional photographer",
+      "1 Traditional videographer",
+      "1 Candid photographer",
+      "1 Candid videographer",
+      "Highlight video",
+      "Full length video",
+      "High-end Album(36 sheets)"
       ]
     },
     {
       "icon": "Camera",
       "title": "Pre & Post Wedding",
       "desc": "Creative outdoor shoots to capture your love story",
-      "price": "From ₹25,000",
+      "price": "From ₹45,000",
       "features": [
-        "4 hours shoot",
-        "2 locations",
-        "100+ edited photos",
-        "Cinematic video",
-        "Photo album"
+      "2 days of shoot",
+      "1 candid photographer",
+      "1 Cinematographer",
+      "1 Drone Video",
+      "1 Highlight video",
+      "50-60 edited photos"
       ]
     },
     {
       "icon": "Users",
       "title": "Birthday & Events",
       "desc": "Professional coverage for all your celebrations",
-      "price": "From ₹15,000",
+      "price": "From ₹35,000",
       "features": [
-        "4 hours coverage",
-        "1 photographer",
-        "150+ photos",
-        "Same day delivery",
-        "Prints available"
+      "1 Traditional photographer",
+      "1 Traditional videographer",
+      "1 Highlight video",
+      "Album (25 sheets)"
       ]
     },
     {
