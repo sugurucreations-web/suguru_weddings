@@ -242,17 +242,17 @@ const PreWeddingShootTelangana = ({ content }) => {
                 {
                   title: "Romantic & Dreamy",
                   desc: "Soft lighting, intimate poses, and emotional moments. Perfect for couples who want a classic, timeless feel.",
-                  image: "https://images.unsplash.com/photo-1522673607710-d0f486925809?w=400"
+                  image: "https://res.cloudinary.com/dgrs2upav/image/upload/v1769616067/DSC01806.jpg_o5l7lx.jpg"
                 },
                 {
                   title: "Fun & Candid",
                   desc: "Playful, natural interactions and laughter. Great for couples who want to show their fun side.",
-                  image: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=400"
+                  image: "https://res.cloudinary.com/dgrs2upav/image/upload/v1769616035/DSC04624.jpg_roonrt.jpg"
                 },
                 {
                   title: "Cinematic & Dramatic",
                   desc: "Movie-style shots with dramatic lighting and poses. Ideal for couples who love bold, artistic photos.",
-                  image: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=400"
+                  image: "https://res.cloudinary.com/dgrs2upav/image/upload/v1769615976/DSC09396.jpg_ufd2vz.jpg"
                 }
               ].map((style, idx) => (
                 <div key={idx} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition">
