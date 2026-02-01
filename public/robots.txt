@@ -1,4 +1,31 @@
+# Robots.txt for Suguru Weddings
+# https://www.suguruweddings.com/robots.txt
+
 User-agent: *
 Allow: /
+Disallow: /invoice
+Disallow: /admin/
+Disallow: /api/
 
-Sitemap: https://suguruweddings.com/sitemap.xml
+# Sitemap
+Sitemap: https://www.suguruweddings.com/sitemap.xml
+
+# Crawl-delay for specific bots (optional)
+User-agent: Googlebot
+Crawl-delay: 0
+
+User-agent: Bingbot
+Crawl-delay: 0
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
