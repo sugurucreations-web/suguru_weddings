@@ -89,8 +89,8 @@ function App() {
         <Route path="/blog/luxury-wedding-photographer-worth" element={<LuxuryPhotographer />} />
         <Route path="/blog/top-andhra-pradesh-wedding-destinations" element={<TopDestinations />} />
 
-        <Route path="/pages/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/pages/terms-of-service" element={<TermsOfService />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
 
         <Route path="/local/photographer-warangal" element={<PhotographerWarangal content={content} />} />
         <Route path="/local/videographer-vijayawada" element={<VideographerVijayawada content={content} />} />
