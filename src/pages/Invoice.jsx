@@ -8,11 +8,14 @@ export default function Invoice() {
   const [invoiceNumber, setInvoiceNumber] = useState("INV-2026-001");
   const [invoiceDate, setInvoiceDate] = useState(today);
   const [dueDate, setDueDate] = useState("");
+
   const [clientName, setClientName] = useState("");
   const [clientPhone, setClientPhone] = useState("");
   const [clientEmail, setClientEmail] = useState("");
   const [clientAddress, setClientAddress] = useState("");
   const [notes, setNotes] = useState("");
+
+  const [gstEnabled, setGstEnabled] = useState(true);
 
   const [services, setServices] = useState([{ name: "", amount: "" }]);
 
@@ -28,7 +31,7 @@ export default function Invoice() {
     0
   );
 
-  const gst = subtotal * 0.18;
+  const gst = gstEnabled ? subtotal * 0.18 : 0;
   const total = subtotal + gst;
 
   const addService = () =>
@@ -45,12 +48,16 @@ export default function Invoice() {
 
   const downloadPDF = () => {
     setTimeout(() => {
-      window.html2pdf().from(invoiceRef.current).save(`${invoiceNumber}.pdf`);
-    }, 300);
+      window.html2pdf().set({
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: "mm", format: "a4" }
+      }).from(invoiceRef.current).save(`${invoiceNumber}.pdf`);
+    }, 500);
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-rose-50 to-pink-100 p-10">
+
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10">
 
         {/* FORM */}
@@ -58,80 +65,48 @@ export default function Invoice() {
 
           <h1 className="text-3xl font-bold">Invoice Generator</h1>
 
-          <input className="border p-3 rounded-xl w-full"
-            value={invoiceNumber}
-            onChange={e=>setInvoiceNumber(e.target.value)}
-            placeholder="Invoice Number"
-          />
+          <label>Invoice Number</label>
+          <input className="border p-3 rounded-xl w-full" value={invoiceNumber} onChange={e=>setInvoiceNumber(e.target.value)} />
 
-          <input type="date" className="border p-3 rounded-xl w-full"
-            value={invoiceDate}
-            onChange={e=>setInvoiceDate(e.target.value)}
-          />
+          <label>Invoice Date</label>
+          <input type="date" className="border p-3 rounded-xl w-full" value={invoiceDate} onChange={e=>setInvoiceDate(e.target.value)} />
 
-          <input type="date" className="border p-3 rounded-xl w-full"
-            value={dueDate}
-            onChange={e=>setDueDate(e.target.value)}
-          />
+          <label>Due Date</label>
+          <input type="date" className="border p-3 rounded-xl w-full" value={dueDate} onChange={e=>setDueDate(e.target.value)} />
 
-          <input className="border p-3 rounded-xl w-full"
-            value={clientName}
-            onChange={e=>setClientName(e.target.value)}
-            placeholder="Client Name"
-          />
+          <label>Client Name</label>
+          <input className="border p-3 rounded-xl w-full" value={clientName} onChange={e=>setClientName(e.target.value)} />
 
-          <input className="border p-3 rounded-xl w-full"
-            value={clientPhone}
-            onChange={e=>setClientPhone(e.target.value)}
-            placeholder="Client Phone"
-          />
+          <label>Client Phone</label>
+          <input className="border p-3 rounded-xl w-full" value={clientPhone} onChange={e=>setClientPhone(e.target.value)} />
 
-          <input className="border p-3 rounded-xl w-full"
-            value={clientEmail}
-            onChange={e=>setClientEmail(e.target.value)}
-            placeholder="Client Email (optional)"
-          />
+          <label>Client Email (optional)</label>
+          <input className="border p-3 rounded-xl w-full" value={clientEmail} onChange={e=>setClientEmail(e.target.value)} />
 
-          <textarea className="border p-3 rounded-xl w-full"
-            value={clientAddress}
-            onChange={e=>setClientAddress(e.target.value)}
-            placeholder="Client Address"
-          />
+          <label>Client Address</label>
+          <textarea className="border p-3 rounded-xl w-full" value={clientAddress} onChange={e=>setClientAddress(e.target.value)} />
 
-          <textarea className="border p-3 rounded-xl w-full"
-            value={notes}
-            onChange={e=>setNotes(e.target.value)}
-            placeholder="Additional Notes"
-          />
+          <label>Additional Notes</label>
+          <textarea className="border p-3 rounded-xl w-full" value={notes} onChange={e=>setNotes(e.target.value)} />
+
+          <div className="flex items-center gap-2">
+            <input type="checkbox" checked={gstEnabled} onChange={()=>setGstEnabled(!gstEnabled)} />
+            <span>Apply GST (18%)</span>
+          </div>
+
+          <h3 className="font-bold pt-4">Services</h3>
 
           {services.map((s,i)=>(
             <div key={i} className="bg-slate-50 p-4 rounded-xl">
-              <input className="border p-2 w-full mb-2 rounded"
-                placeholder="Service"
-                value={s.name}
-                onChange={e=>updateService(i,"name",e.target.value)}
-              />
-              <input type="number" className="border p-2 w-full rounded"
-                placeholder="Amount"
-                value={s.amount}
-                onChange={e=>updateService(i,"amount",e.target.value)}
-              />
-              {services.length>1 && (
-                <button onClick={()=>removeService(i)} className="text-red-500 mt-2">
-                  Remove
-                </button>
-              )}
+              <input className="border p-2 w-full mb-2 rounded" placeholder="Service" value={s.name} onChange={e=>updateService(i,"name",e.target.value)} />
+              <input type="number" className="border p-2 w-full rounded" placeholder="Amount" value={s.amount} onChange={e=>updateService(i,"amount",e.target.value)} />
+              {services.length>1 && <button onClick={()=>removeService(i)} className="text-red-500 mt-2">Remove</button>}
             </div>
           ))}
 
-          <button onClick={addService} className="text-rose-600 font-semibold">
-            + Add Service
-          </button>
+          <button onClick={addService} className="text-rose-600 font-semibold">+ Add Service</button>
 
-          <button onClick={downloadPDF}
-            className="w-full bg-rose-600 text-white py-3 rounded-xl">
-            Download PDF
-          </button>
+          <button onClick={downloadPDF} className="w-full bg-rose-600 text-white py-3 rounded-xl">Download PDF</button>
 
         </div>
 
@@ -159,29 +134,12 @@ export default function Invoice() {
           ))}
 
           <div className="bg-slate-50 p-4 rounded-xl mt-6">
-
-            <div className="flex justify-between">
-              <span>Subtotal</span>
-              <span>₹{subtotal.toFixed(2)}</span>
-            </div>
-
-            <div className="flex justify-between">
-              <span>GST 18%</span>
-              <span>₹{gst.toFixed(2)}</span>
-            </div>
-
-            <div className="flex justify-between font-bold border-t pt-2 mt-2">
-              <span>Total</span>
-              <span>₹{total.toFixed(2)}</span>
-            </div>
-
+            <div className="flex justify-between"><span>Subtotal</span><span>₹{subtotal.toFixed(2)}</span></div>
+            {gstEnabled && <div className="flex justify-between"><span>GST 18%</span><span>₹{gst.toFixed(2)}</span></div>}
+            <div className="flex justify-between font-bold border-t pt-2 mt-2"><span>Total</span><span>₹{total.toFixed(2)}</span></div>
           </div>
 
-          {notes && (
-            <div className="mt-4 text-sm">
-              <strong>Notes:</strong> {notes}
-            </div>
-          )}
+          {notes && <p className="mt-4 text-sm"><strong>Notes:</strong> {notes}</p>}
 
           <div className="mt-8 text-center text-sm text-gray-500">
             Thank you for choosing Suguru Weddings!<br/>
