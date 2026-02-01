@@ -3,11 +3,16 @@ import { useState, useEffect, useRef } from "react";
 export default function Invoice() {
   const invoiceRef = useRef(null);
 
+  const today = new Date().toISOString().split("T")[0];
+
   const [invoiceNumber, setInvoiceNumber] = useState("INV-2026-001");
-  const [clientName, setClientName] = useState("");
-  const [clientAddress, setClientAddress] = useState("");
+  const [invoiceDate, setInvoiceDate] = useState(today);
   const [dueDate, setDueDate] = useState("");
-  const [logo, setLogo] = useState(null);
+  const [clientName, setClientName] = useState("");
+  const [clientPhone, setClientPhone] = useState("");
+  const [clientEmail, setClientEmail] = useState("");
+  const [clientAddress, setClientAddress] = useState("");
+  const [notes, setNotes] = useState("");
 
   const [services, setServices] = useState([{ name: "", amount: "" }]);
 
@@ -38,80 +43,81 @@ export default function Invoice() {
     setServices(copy);
   };
 
-  const handleLogo = (e) => {
-    const file = e.target.files[0];
-    if (file) setLogo(URL.createObjectURL(file));
-  };
-
   const downloadPDF = () => {
-    window.html2pdf().from(invoiceRef.current).save(`${invoiceNumber}.pdf`);
-  };
-
-  const shareWhatsApp = () => {
-    const msg = `Invoice ${invoiceNumber}
-Client: ${clientName}
-Total: ₹${total.toFixed(2)}
-Due: ${dueDate || "N/A"}
-
-Suguru Weddings`;
-
-    window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, "_blank");
+    setTimeout(() => {
+      window.html2pdf().from(invoiceRef.current).save(`${invoiceNumber}.pdf`);
+    }, 300);
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-rose-50 to-pink-100 p-10">
-
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10">
 
         {/* FORM */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 space-y-5">
+        <div className="bg-white rounded-2xl shadow-xl p-8 space-y-4">
 
           <h1 className="text-3xl font-bold">Invoice Generator</h1>
 
           <input className="border p-3 rounded-xl w-full"
             value={invoiceNumber}
-            onChange={(e) => setInvoiceNumber(e.target.value)}
+            onChange={e=>setInvoiceNumber(e.target.value)}
             placeholder="Invoice Number"
+          />
+
+          <input type="date" className="border p-3 rounded-xl w-full"
+            value={invoiceDate}
+            onChange={e=>setInvoiceDate(e.target.value)}
+          />
+
+          <input type="date" className="border p-3 rounded-xl w-full"
+            value={dueDate}
+            onChange={e=>setDueDate(e.target.value)}
           />
 
           <input className="border p-3 rounded-xl w-full"
             value={clientName}
-            onChange={(e) => setClientName(e.target.value)}
+            onChange={e=>setClientName(e.target.value)}
             placeholder="Client Name"
+          />
+
+          <input className="border p-3 rounded-xl w-full"
+            value={clientPhone}
+            onChange={e=>setClientPhone(e.target.value)}
+            placeholder="Client Phone"
+          />
+
+          <input className="border p-3 rounded-xl w-full"
+            value={clientEmail}
+            onChange={e=>setClientEmail(e.target.value)}
+            placeholder="Client Email (optional)"
           />
 
           <textarea className="border p-3 rounded-xl w-full"
             value={clientAddress}
-            onChange={(e) => setClientAddress(e.target.value)}
+            onChange={e=>setClientAddress(e.target.value)}
             placeholder="Client Address"
           />
 
-          <input type="date"
-            className="border p-3 rounded-xl w-full"
-            value={dueDate}
-            onChange={(e) => setDueDate(e.target.value)}
+          <textarea className="border p-3 rounded-xl w-full"
+            value={notes}
+            onChange={e=>setNotes(e.target.value)}
+            placeholder="Additional Notes"
           />
 
-          <input type="file" onChange={handleLogo} />
-
-          {services.map((s, i) => (
+          {services.map((s,i)=>(
             <div key={i} className="bg-slate-50 p-4 rounded-xl">
-
               <input className="border p-2 w-full mb-2 rounded"
                 placeholder="Service"
                 value={s.name}
-                onChange={(e) => updateService(i, "name", e.target.value)}
+                onChange={e=>updateService(i,"name",e.target.value)}
               />
-
-              <input type="number"
-                className="border p-2 w-full rounded"
+              <input type="number" className="border p-2 w-full rounded"
                 placeholder="Amount"
                 value={s.amount}
-                onChange={(e) => updateService(i, "amount", e.target.value)}
+                onChange={e=>updateService(i,"amount",e.target.value)}
               />
-
-              {services.length > 1 && (
-                <button onClick={() => removeService(i)} className="text-red-500 mt-2">
+              {services.length>1 && (
+                <button onClick={()=>removeService(i)} className="text-red-500 mt-2">
                   Remove
                 </button>
               )}
@@ -127,31 +133,28 @@ Suguru Weddings`;
             Download PDF
           </button>
 
-          <button onClick={shareWhatsApp}
-            className="w-full bg-green-500 text-white py-3 rounded-xl">
-            Share WhatsApp
-          </button>
-
         </div>
 
         {/* PREVIEW */}
-        <div ref={invoiceRef} className="bg-white rounded-2xl shadow-xl p-10 sticky top-10">
-
-          {logo && <img src={logo} className="h-20 mb-4" />}
+        <div ref={invoiceRef} className="bg-white rounded-2xl shadow-xl p-10">
 
           <h2 className="text-3xl font-bold text-rose-600">Suguru Weddings</h2>
 
-          <p className="mt-2">Invoice: {invoiceNumber}</p>
-          <p>Client: {clientName}</p>
-          <p>{clientAddress}</p>
+          <p>Invoice: {invoiceNumber}</p>
+          <p>Invoice Date: {invoiceDate}</p>
           <p>Due Date: {dueDate}</p>
 
-          <div className="border-t my-4" />
+          <p className="mt-2">Client: {clientName}</p>
+          <p>{clientPhone}</p>
+          {clientEmail && <p>{clientEmail}</p>}
+          <p>{clientAddress}</p>
 
-          {services.map((s, i) => (
+          <hr className="my-4"/>
+
+          {services.map((s,i)=>(
             <div key={i} className="flex justify-between mb-1">
               <span>{s.name}</span>
-              <span>₹{parseFloat(s.amount || 0).toFixed(2)}</span>
+              <span>₹{parseFloat(s.amount||0).toFixed(2)}</span>
             </div>
           ))}
 
@@ -167,15 +170,25 @@ Suguru Weddings`;
               <span>₹{gst.toFixed(2)}</span>
             </div>
 
-            <div className="flex justify-between font-bold text-lg border-t pt-2 mt-2">
+            <div className="flex justify-between font-bold border-t pt-2 mt-2">
               <span>Total</span>
               <span>₹{total.toFixed(2)}</span>
             </div>
 
           </div>
 
-        </div>
+          {notes && (
+            <div className="mt-4 text-sm">
+              <strong>Notes:</strong> {notes}
+            </div>
+          )}
 
+          <div className="mt-8 text-center text-sm text-gray-500">
+            Thank you for choosing Suguru Weddings!<br/>
+            +91-8374962192
+          </div>
+
+        </div>
       </div>
     </div>
   );
