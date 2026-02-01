@@ -18,10 +18,12 @@ export default function Invoice() {
   const [services, setServices] = useState([{ name: "", description: "", amount: "" }]);
 
   useEffect(() => {
-    const s = document.createElement("script");
-    s.src =
-      "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js";
-    document.body.appendChild(s);
+    if (!window.html2pdf) {
+      const s = document.createElement("script");
+      s.src = "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js";
+      s.async = true;
+      document.body.appendChild(s);
+    }
   }, []);
 
   const subtotal = services.reduce(
@@ -44,7 +46,7 @@ export default function Invoice() {
     setServices(copy);
   };
 
-  // ✅ FIXED PDF GENERATION
+  // ✅ COMPLETELY FIXED PDF GENERATION
   const downloadPDF = () => {
     if (!window.html2pdf) {
       alert("PDF library is still loading. Please wait a moment and try again.");
@@ -52,24 +54,49 @@ export default function Invoice() {
     }
 
     const element = invoiceRef.current;
+    
+    // Clone the element to avoid modifying the display
+    const clone = element.cloneNode(true);
+    clone.style.position = 'absolute';
+    clone.style.left = '-9999px';
+    clone.style.width = '210mm'; // A4 width
+    clone.style.padding = '15mm';
+    document.body.appendChild(clone);
+
     const opt = {
-      margin: [10, 10, 10, 10],
+      margin: 0,
       filename: `${invoiceNumber || 'invoice'}.pdf`,
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { 
         scale: 2,
         useCORS: true,
         letterRendering: true,
-        backgroundColor: '#ffffff'
+        backgroundColor: '#ffffff',
+        windowWidth: 794, // A4 width in pixels at 96 DPI
+        width: 794,
+        height: clone.scrollHeight
       },
       jsPDF: { 
         unit: 'mm', 
         format: 'a4', 
-        orientation: 'portrait' 
-      }
+        orientation: 'portrait',
+        compress: true
+      },
+      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
     };
 
-    window.html2pdf().set(opt).from(element).save();
+    window.html2pdf()
+      .set(opt)
+      .from(clone)
+      .save()
+      .then(() => {
+        document.body.removeChild(clone);
+      })
+      .catch((error) => {
+        console.error('PDF generation error:', error);
+        document.body.removeChild(clone);
+        alert('Error generating PDF. Please try again.');
+      });
   };
 
   const shareWhatsApp = () => {
@@ -264,166 +291,287 @@ Suguru Weddings
           </div>
         </div>
 
-        {/* INVOICE PREVIEW - PDF TARGET */}
+        {/* INVOICE PREVIEW - This is what gets converted to PDF */}
         <div className="lg:sticky lg:top-4 h-fit">
           <div
             ref={invoiceRef}
-            className="bg-white rounded-xl shadow-2xl overflow-hidden"
-            style={{ 
-              maxWidth: '100%',
-              padding: '40px'
+            style={{
+              backgroundColor: '#ffffff',
+              fontFamily: 'system-ui, -apple-system, sans-serif'
             }}
           >
-            {/* Header with brand color bar */}
-            <div className="border-t-8 border-rose-600 -mt-10 -mx-10 mb-8"></div>
+            {/* Red top border */}
+            <div style={{ 
+              borderTop: '8px solid #e11d48',
+              marginBottom: '30px'
+            }}></div>
 
-            {/* Invoice Header */}
-            <div className="flex justify-between items-start mb-8 pb-6 border-b-2 border-gray-200">
-              <div>
-                <h2 className="text-3xl font-bold text-rose-600 mb-2" style={{ fontFamily: 'Georgia, serif' }}>
-                  Suguru Weddings
-                </h2>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  Professional Photography & Videography<br/>
-                  Banjara Hills, Hyderabad, Telangana<br/>
-                  Phone: +91-8374962192<br/>
-                  Email: info@suguruweddings.com<br/>
-                  GSTIN: [Your GSTIN Number]
-                </p>
-              </div>
-              <div className="text-right">
-                <div className="text-2xl font-bold text-gray-800 mb-1">
-                  {invoiceNumber || "INVOICE"}
+            <div style={{ padding: '0 30px' }}>
+              {/* Header */}
+              <div style={{ 
+                display: 'flex', 
+                justifyContent: 'space-between',
+                marginBottom: '30px',
+                paddingBottom: '20px',
+                borderBottom: '2px solid #e5e7eb'
+              }}>
+                <div>
+                  <h2 style={{ 
+                    fontSize: '28px',
+                    fontWeight: 'bold',
+                    color: '#e11d48',
+                    marginBottom: '10px',
+                    fontFamily: 'Georgia, serif'
+                  }}>
+                    Suguru Weddings
+                  </h2>
+                  <div style={{ fontSize: '12px', color: '#6b7280', lineHeight: '1.6' }}>
+                    Professional Photography & Videography<br/>
+                    Banjara Hills, Hyderabad, Telangana<br/>
+                    Phone: +91-8374962192<br/>
+                    Email: info@suguruweddings.com<br/>
+                    GSTIN: [Your GSTIN Number]
+                  </div>
                 </div>
-                <div className="text-sm text-gray-500">
-                  {invoiceDate && `Date: ${new Date(invoiceDate).toLocaleDateString('en-IN', { 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric' 
-                  })}`}
-                </div>
-                {dueDate && (
-                  <div className="text-sm text-gray-500">
-                    Due: {new Date(dueDate).toLocaleDateString('en-IN', { 
+                <div style={{ textAlign: 'right' }}>
+                  <div style={{ 
+                    fontSize: '24px',
+                    fontWeight: 'bold',
+                    color: '#1f2937',
+                    marginBottom: '5px'
+                  }}>
+                    {invoiceNumber || "INVOICE"}
+                  </div>
+                  <div style={{ fontSize: '12px', color: '#6b7280' }}>
+                    {invoiceDate && `Date: ${new Date(invoiceDate).toLocaleDateString('en-IN', { 
                       year: 'numeric', 
                       month: 'long', 
                       day: 'numeric' 
-                    })}
+                    })}`}
                   </div>
-                )}
-              </div>
-            </div>
-
-            {/* Bill To Section */}
-            <div className="bg-gray-50 p-5 rounded-lg mb-6">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-600 mb-3">
-                Bill To
-              </h3>
-              <div className="text-lg font-bold text-gray-800 mb-2">
-                {clientName || "Client Name"}
-              </div>
-              <div className="text-sm text-gray-600 space-y-1">
-                {clientPhone && <div>{clientPhone}</div>}
-                {clientEmail && <div>{clientEmail}</div>}
-                {clientAddress && <div className="whitespace-pre-line">{clientAddress}</div>}
-              </div>
-            </div>
-
-            {/* Services Table */}
-            <table className="w-full mb-6">
-              <thead>
-                <tr className="bg-gray-100 text-left">
-                  <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-700">
-                    Service Description
-                  </th>
-                  <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-gray-700 text-right">
-                    Amount
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {services.filter(s => s.name || s.amount).map((s, i) => (
-                  <tr key={i} className="border-b border-gray-200">
-                    <td className="py-3 px-4">
-                      <div className="font-semibold text-gray-800">{s.name || "Service"}</div>
-                      {s.description && (
-                        <div className="text-sm text-gray-500 mt-1">{s.description}</div>
-                      )}
-                    </td>
-                    <td className="py-3 px-4 text-right text-gray-800">
-                      ₹{parseFloat(s.amount || 0).toLocaleString('en-IN', { 
-                        minimumFractionDigits: 2, 
-                        maximumFractionDigits: 2 
+                  {dueDate && (
+                    <div style={{ fontSize: '12px', color: '#6b7280' }}>
+                      Due: {new Date(dueDate).toLocaleDateString('en-IN', { 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric' 
                       })}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-
-            {/* Totals */}
-            <div className="bg-gray-50 p-5 rounded-lg mb-6">
-              <div className="flex justify-between text-sm mb-2 text-gray-600">
-                <span>Subtotal:</span>
-                <span>₹{subtotal.toLocaleString('en-IN', { 
-                  minimumFractionDigits: 2, 
-                  maximumFractionDigits: 2 
-                })}</span>
+                    </div>
+                  )}
+                </div>
               </div>
-              {gstEnabled && (
-                <div className="flex justify-between text-sm mb-2 font-semibold text-gray-700">
-                  <span>
-                    GST @ 18% 
-                    <span className="ml-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
-                      SAC: 998383
-                    </span>
-                  </span>
-                  <span>₹{gst.toLocaleString('en-IN', { 
-                    minimumFractionDigits: 2, 
+
+              {/* Bill To */}
+              <div style={{ 
+                backgroundColor: '#f9fafb',
+                padding: '20px',
+                borderRadius: '8px',
+                marginBottom: '25px'
+              }}>
+                <div style={{ 
+                  fontSize: '11px',
+                  fontWeight: 'bold',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
+                  color: '#6b7280',
+                  marginBottom: '12px'
+                }}>
+                  BILL TO
+                </div>
+                <div style={{ 
+                  fontSize: '18px',
+                  fontWeight: 'bold',
+                  color: '#1f2937',
+                  marginBottom: '8px'
+                }}>
+                  {clientName || "Client Name"}
+                </div>
+                <div style={{ fontSize: '13px', color: '#4b5563', lineHeight: '1.6' }}>
+                  {clientPhone && <div>{clientPhone}</div>}
+                  {clientEmail && <div>{clientEmail}</div>}
+                  {clientAddress && <div style={{ whiteSpace: 'pre-line' }}>{clientAddress}</div>}
+                </div>
+              </div>
+
+              {/* Services Table */}
+              <table style={{ 
+                width: '100%',
+                marginBottom: '25px',
+                borderCollapse: 'collapse'
+              }}>
+                <thead>
+                  <tr style={{ backgroundColor: '#f3f4f6' }}>
+                    <th style={{ 
+                      padding: '12px',
+                      textAlign: 'left',
+                      fontSize: '11px',
+                      fontWeight: 'bold',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px',
+                      color: '#374151'
+                    }}>
+                      Service Description
+                    </th>
+                    <th style={{ 
+                      padding: '12px',
+                      textAlign: 'right',
+                      fontSize: '11px',
+                      fontWeight: 'bold',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px',
+                      color: '#374151'
+                    }}>
+                      Amount
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {services.filter(s => s.name || s.amount).map((s, i) => (
+                    <tr key={i} style={{ borderBottom: '1px solid #e5e7eb' }}>
+                      <td style={{ padding: '12px' }}>
+                        <div style={{ fontWeight: '600', color: '#1f2937', marginBottom: '3px' }}>
+                          {s.name || "Service"}
+                        </div>
+                        {s.description && (
+                          <div style={{ fontSize: '12px', color: '#6b7280' }}>
+                            {s.description}
+                          </div>
+                        )}
+                      </td>
+                      <td style={{ 
+                        padding: '12px',
+                        textAlign: 'right',
+                        color: '#1f2937'
+                      }}>
+                        ₹{parseFloat(s.amount || 0).toLocaleString('en-IN', { 
+                          minimumFractionDigits: 2,
+                          maximumFractionDigits: 2 
+                        })}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+
+              {/* Totals */}
+              <div style={{ 
+                backgroundColor: '#f9fafb',
+                padding: '20px',
+                borderRadius: '8px',
+                marginBottom: '25px'
+              }}>
+                <div style={{ 
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  fontSize: '13px',
+                  marginBottom: '8px',
+                  color: '#6b7280'
+                }}>
+                  <span>Subtotal:</span>
+                  <span>₹{subtotal.toLocaleString('en-IN', { 
+                    minimumFractionDigits: 2,
                     maximumFractionDigits: 2 
                   })}</span>
                 </div>
+                {gstEnabled && (
+                  <div style={{ 
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    fontSize: '13px',
+                    fontWeight: '600',
+                    marginBottom: '8px',
+                    color: '#374151'
+                  }}>
+                    <span>
+                      GST @ 18% 
+                      <span style={{ 
+                        marginLeft: '8px',
+                        fontSize: '11px',
+                        backgroundColor: '#dbeafe',
+                        color: '#1e40af',
+                        padding: '2px 8px',
+                        borderRadius: '12px'
+                      }}>
+                        SAC: 998383
+                      </span>
+                    </span>
+                    <span>₹{gst.toLocaleString('en-IN', { 
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2 
+                    })}</span>
+                  </div>
+                )}
+                <div style={{ 
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  fontSize: '18px',
+                  fontWeight: 'bold',
+                  paddingTop: '12px',
+                  borderTop: '2px solid #d1d5db',
+                  color: '#111827'
+                }}>
+                  <span>Total Amount:</span>
+                  <span>₹{total.toLocaleString('en-IN', { 
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2 
+                  })}</span>
+                </div>
+              </div>
+
+              {/* Notes */}
+              {notes && (
+                <div style={{ 
+                  backgroundColor: '#fef3c7',
+                  borderLeft: '4px solid #f59e0b',
+                  padding: '15px',
+                  marginBottom: '25px',
+                  borderRadius: '4px'
+                }}>
+                  <div style={{ 
+                    fontSize: '11px',
+                    fontWeight: 'bold',
+                    textTransform: 'uppercase',
+                    color: '#92400e',
+                    marginBottom: '8px'
+                  }}>
+                    NOTES
+                  </div>
+                  <div style={{ 
+                    fontSize: '13px',
+                    color: '#78350f',
+                    whiteSpace: 'pre-line',
+                    lineHeight: '1.6'
+                  }}>
+                    {notes}
+                  </div>
+                </div>
               )}
-              <div className="flex justify-between text-lg font-bold text-gray-900 pt-3 border-t-2 border-gray-300">
-                <span>Total Amount:</span>
-                <span>₹{total.toLocaleString('en-IN', { 
-                  minimumFractionDigits: 2, 
-                  maximumFractionDigits: 2 
-                })}</span>
-              </div>
-            </div>
 
-            {/* Notes */}
-            {notes && (
-              <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
-                <h4 className="text-xs font-bold uppercase text-yellow-800 mb-2">
-                  Notes
-                </h4>
-                <p className="text-sm text-yellow-900 whitespace-pre-line">
-                  {notes}
-                </p>
-              </div>
-            )}
-
-            {/* Footer */}
-            <div className="text-center pt-6 border-t-2 border-gray-200">
-              <p className="text-gray-600 mb-3">
-                Thank you for choosing Suguru Weddings!
-              </p>
-              <div className="flex justify-center gap-6 text-sm text-gray-500">
-                <span className="flex items-center gap-2">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                  </svg>
-                  +91-8374962192
-                </span>
-                <span className="flex items-center gap-2">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-                  </svg>
-                  info@suguruweddings.com
-                </span>
+              {/* Footer */}
+              <div style={{ 
+                textAlign: 'center',
+                paddingTop: '20px',
+                borderTop: '2px solid #e5e7eb',
+                marginBottom: '20px'
+              }}>
+                <div style={{ 
+                  color: '#6b7280',
+                  marginBottom: '12px',
+                  fontSize: '14px'
+                }}>
+                  Thank you for choosing Suguru Weddings!
+                </div>
+                <div style={{ 
+                  display: 'flex',
+                  justifyContent: 'center',
+                  gap: '20px',
+                  fontSize: '12px',
+                  color: '#6b7280',
+                  flexWrap: 'wrap'
+                }}>
+                  <span>📞 +91-8374962192</span>
+                  <span>✉️ info@suguruweddings.com</span>
+                </div>
               </div>
             </div>
           </div>
@@ -445,11 +593,6 @@ Suguru Weddings
           outline: none;
           border-color: #e11d48;
           box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.1);
-        }
-        @media print {
-          body {
-            background: white !important;
-          }
         }
       `}</style>
     </div>
