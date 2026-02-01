@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+
 import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import Invoice from './pages/Invoice';
+import HomePage from './pages/HomePage';
 
 // Pages
-import HomePage from './pages/HomePage';
 import WeddingPhotographyHyderabad from './pages/WeddingPhotographyHyderabad';
 import PreWeddingShootTelangana from './pages/PreWeddingShootTelangana';
 import WeddingVideographyHyderabad from './pages/WeddingVideographyHyderabad';
@@ -31,6 +34,8 @@ function App() {
   const [content, setContent] = useState(null);
   const location = useLocation();
 
+  const isInvoice = window.location.hostname.startsWith("invoice");
+
   useEffect(() => {
     fetch('/images/content.json')
       .then(res => res.json())
@@ -38,7 +43,6 @@ function App() {
       .catch(err => console.error('Error loading content:', err));
   }, []);
 
-  // Handle hash navigation and scroll to sections
   useEffect(() => {
     if (location.hash) {
       const element = document.querySelector(location.hash);
@@ -60,36 +64,40 @@ function App() {
     );
   }
 
+  // 👉 Invoice subdomain ONLY
+  if (isInvoice) {
+    return <Invoice />;
+  }
+
+  // 👉 Main website
   return (
     <div className="min-h-screen bg-slate-50">
       <Header />
+
       <Routes>
         <Route path="/" element={<HomePage content={content} />} />
-        
-        {/* Service Pages */}
+
         <Route path="/wedding-photography-hyderabad" element={<WeddingPhotographyHyderabad content={content} />} />
         <Route path="/wedding-videography-hyderabad" element={<WeddingVideographyHyderabad content={content} />} />
         <Route path="/pre-wedding-shoot-telangana" element={<PreWeddingShootTelangana content={content} />} />
         <Route path="/destination-weddings-andhra-pradesh" element={<DestinationWeddingsAndhraPradesh content={content} />} />
-        
-        {/* Blog */}
+
         <Route path="/blog" element={<BlogHome />} />
         <Route path="/blog/best-wedding-photo-spots-hyderabad" element={<BestWeddingSpots />} />
         <Route path="/blog/telangana-pre-wedding-photoshoot-locations" element={<PreWeddingLocations />} />
         <Route path="/blog/hiring-photographer-hyderabad" element={<HiringPhotographer />} />
         <Route path="/blog/luxury-wedding-photographer-worth" element={<LuxuryPhotographer />} />
         <Route path="/blog/top-andhra-pradesh-wedding-destinations" element={<TopDestinations />} />
-        
-        {/* Footer links */}
+
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
-        
-        {/* Local Pages */}
+
         <Route path="/local/photographer-warangal" element={<PhotographerWarangal content={content} />} />
         <Route path="/local/videographer-vijayawada" element={<VideographerVijayawada content={content} />} />
         <Route path="/local/photographer-visakhapatnam" element={<PhotographerVisakhapatnam content={content} />} />
         <Route path="/local/photographer-guntur" element={<PhotographerGuntur content={content} />} />
       </Routes>
+
       <Footer contact={content.contact} />
       <WhatsAppButton phone={content.contact.whatsapp} />
     </div>
