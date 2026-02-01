@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 
 export default function Invoice() {
   const invoiceRef = useRef(null);
-
   const today = new Date().toISOString().split("T")[0];
 
   const [invoiceNumber, setInvoiceNumber] = useState("INV-2026-001");
@@ -16,7 +15,6 @@ export default function Invoice() {
   const [notes, setNotes] = useState("");
 
   const [gstEnabled, setGstEnabled] = useState(true);
-
   const [services, setServices] = useState([{ name: "", amount: "" }]);
 
   useEffect(() => {
@@ -46,97 +44,119 @@ export default function Invoice() {
     setServices(copy);
   };
 
+  // ✅ REAL PDF FIX
   const downloadPDF = () => {
     setTimeout(() => {
       window.html2pdf().set({
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: "mm", format: "a4" }
-      }).from(invoiceRef.current).save(`${invoiceNumber}.pdf`);
-    }, 500);
+        margin: 10,
+        filename: `${invoiceNumber}.pdf`,
+        html2canvas: {
+          scale: 2,
+          backgroundColor: "#ffffff"
+        },
+        jsPDF: {
+          unit: "mm",
+          format: "a4",
+          orientation: "portrait"
+        }
+      }).from(invoiceRef.current).save();
+    }, 600);
   };
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-50 to-pink-100 p-10">
+  const Label = ({ children }) => (
+    <div className="text-xs font-semibold uppercase tracking-wide text-gray-600 mt-4">
+      {children}
+    </div>
+  );
 
+  return (
+    <div className="min-h-screen bg-rose-50 p-10">
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10">
 
         {/* FORM */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 space-y-4">
+        <div className="bg-white rounded-xl shadow p-8">
 
-          <h1 className="text-3xl font-bold">Invoice Generator</h1>
+          <h1 className="text-2xl font-bold mb-4">Invoice Generator</h1>
 
-          <label>Invoice Number</label>
-          <input className="border p-3 rounded-xl w-full" value={invoiceNumber} onChange={e=>setInvoiceNumber(e.target.value)} />
+          <Label>Invoice Number</Label>
+          <input className="input" value={invoiceNumber} onChange={e=>setInvoiceNumber(e.target.value)} />
 
-          <label>Invoice Date</label>
-          <input type="date" className="border p-3 rounded-xl w-full" value={invoiceDate} onChange={e=>setInvoiceDate(e.target.value)} />
+          <Label>Invoice Date</Label>
+          <input type="date" className="input" value={invoiceDate} onChange={e=>setInvoiceDate(e.target.value)} />
 
-          <label>Due Date</label>
-          <input type="date" className="border p-3 rounded-xl w-full" value={dueDate} onChange={e=>setDueDate(e.target.value)} />
+          <Label>Due Date</Label>
+          <input type="date" className="input" value={dueDate} onChange={e=>setDueDate(e.target.value)} />
 
-          <label>Client Name</label>
-          <input className="border p-3 rounded-xl w-full" value={clientName} onChange={e=>setClientName(e.target.value)} />
+          <Label>Client Name</Label>
+          <input className="input" value={clientName} onChange={e=>setClientName(e.target.value)} />
 
-          <label>Client Phone</label>
-          <input className="border p-3 rounded-xl w-full" value={clientPhone} onChange={e=>setClientPhone(e.target.value)} />
+          <Label>Client Phone</Label>
+          <input className="input" value={clientPhone} onChange={e=>setClientPhone(e.target.value)} />
 
-          <label>Client Email (optional)</label>
-          <input className="border p-3 rounded-xl w-full" value={clientEmail} onChange={e=>setClientEmail(e.target.value)} />
+          <Label>Client Email (optional)</Label>
+          <input className="input" value={clientEmail} onChange={e=>setClientEmail(e.target.value)} />
 
-          <label>Client Address</label>
-          <textarea className="border p-3 rounded-xl w-full" value={clientAddress} onChange={e=>setClientAddress(e.target.value)} />
+          <Label>Client Address</Label>
+          <textarea className="input" value={clientAddress} onChange={e=>setClientAddress(e.target.value)} />
 
-          <label>Additional Notes</label>
-          <textarea className="border p-3 rounded-xl w-full" value={notes} onChange={e=>setNotes(e.target.value)} />
+          <Label>Additional Notes</Label>
+          <textarea className="input" value={notes} onChange={e=>setNotes(e.target.value)} />
 
-          <div className="flex items-center gap-2">
+          <div className="flex gap-2 mt-4 text-sm">
             <input type="checkbox" checked={gstEnabled} onChange={()=>setGstEnabled(!gstEnabled)} />
-            <span>Apply GST (18%)</span>
+            Apply GST (18%)
           </div>
 
-          <h3 className="font-bold pt-4">Services</h3>
+          <Label>Services</Label>
 
           {services.map((s,i)=>(
-            <div key={i} className="bg-slate-50 p-4 rounded-xl">
-              <input className="border p-2 w-full mb-2 rounded" placeholder="Service" value={s.name} onChange={e=>updateService(i,"name",e.target.value)} />
-              <input type="number" className="border p-2 w-full rounded" placeholder="Amount" value={s.amount} onChange={e=>updateService(i,"amount",e.target.value)} />
-              {services.length>1 && <button onClick={()=>removeService(i)} className="text-red-500 mt-2">Remove</button>}
+            <div key={i} className="bg-gray-50 p-4 rounded mt-2">
+              <input className="input mb-2" placeholder="Service" value={s.name} onChange={e=>updateService(i,"name",e.target.value)} />
+              <input className="input" type="number" placeholder="Amount" value={s.amount} onChange={e=>updateService(i,"amount",e.target.value)} />
+              {services.length>1 && <button className="text-red-500 text-sm mt-2" onClick={()=>removeService(i)}>Remove</button>}
             </div>
           ))}
 
-          <button onClick={addService} className="text-rose-600 font-semibold">+ Add Service</button>
+          <button onClick={addService} className="text-rose-600 mt-3 text-sm">+ Add Service</button>
 
-          <button onClick={downloadPDF} className="w-full bg-rose-600 text-white py-3 rounded-xl">Download PDF</button>
-
+          <button onClick={downloadPDF} className="w-full bg-rose-600 text-white py-3 rounded mt-6">
+            Download PDF
+          </button>
         </div>
 
-        {/* PREVIEW */}
-        <div ref={invoiceRef} className="bg-white rounded-2xl shadow-xl p-10">
+        {/* PREVIEW (PDF TARGET) */}
+        <div
+          ref={invoiceRef}
+          style={{ width: "794px", background: "#fff" }}
+          className="bg-white rounded shadow p-10"
+        >
 
-          <h2 className="text-3xl font-bold text-rose-600">Suguru Weddings</h2>
+          <h2 className="text-2xl font-bold text-rose-600">Suguru Weddings</h2>
 
           <p>Invoice: {invoiceNumber}</p>
           <p>Invoice Date: {invoiceDate}</p>
           <p>Due Date: {dueDate}</p>
 
-          <p className="mt-2">Client: {clientName}</p>
-          <p>{clientPhone}</p>
-          {clientEmail && <p>{clientEmail}</p>}
-          <p>{clientAddress}</p>
+          <div className="mt-4">
+            <strong>{clientName}</strong><br/>
+            {clientPhone}<br/>
+            {clientEmail && <>{clientEmail}<br/></>}
+            {clientAddress}
+          </div>
 
           <hr className="my-4"/>
 
           {services.map((s,i)=>(
-            <div key={i} className="flex justify-between mb-1">
+            <div key={i} className="flex justify-between text-sm mb-1">
               <span>{s.name}</span>
               <span>₹{parseFloat(s.amount||0).toFixed(2)}</span>
             </div>
           ))}
 
-          <div className="bg-slate-50 p-4 rounded-xl mt-6">
+          <div className="bg-gray-50 p-4 mt-4">
             <div className="flex justify-between"><span>Subtotal</span><span>₹{subtotal.toFixed(2)}</span></div>
             {gstEnabled && <div className="flex justify-between"><span>GST 18%</span><span>₹{gst.toFixed(2)}</span></div>}
-            <div className="flex justify-between font-bold border-t pt-2 mt-2"><span>Total</span><span>₹{total.toFixed(2)}</span></div>
+            <div className="flex justify-between font-bold border-t mt-2 pt-2"><span>Total</span><span>₹{total.toFixed(2)}</span></div>
           </div>
 
           {notes && <p className="mt-4 text-sm"><strong>Notes:</strong> {notes}</p>}
@@ -148,6 +168,17 @@ export default function Invoice() {
 
         </div>
       </div>
+
+      {/* quick input style */}
+      <style>{`
+        .input {
+          width:100%;
+          border:1px solid #e5e7eb;
+          padding:10px;
+          border-radius:8px;
+          margin-top:6px;
+        }
+      `}</style>
     </div>
   );
 }
