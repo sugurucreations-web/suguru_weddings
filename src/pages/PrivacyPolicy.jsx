@@ -1,147 +1,233 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const PrivacyPolicy = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = "Privacy Policy - Suguru Weddings";
+  }, []);
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header Spacer */}
-      <div className="h-20"></div>
-
-      {/* Hero Section */}
-      <div className="bg-gradient-to-r from-rose-600 to-pink-600 text-white py-16">
-        <div className="max-w-4xl mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Privacy Policy</h1>
-          <p className="text-lg opacity-90">Last updated: January 25, 2026</p>
+    <div className="min-h-screen bg-white">
+      {/* Header spacing */}
+      <div className="h-16"></div>
+      
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Breadcrumb */}
+        <div className="mb-8">
+          <Link to="/" className="text-rose-600 hover:text-rose-700">Home</Link>
+          <span className="mx-2 text-gray-400">/</span>
+          <span className="text-gray-600">Privacy Policy</span>
         </div>
-      </div>
 
-      {/* Content Section */}
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        <div className="bg-white rounded-lg shadow-md p-8 md:p-12">
-          
+        {/* Header */}
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">Privacy Policy</h1>
+        <p className="text-gray-600 mb-8">Last updated: February 1, 2026</p>
+
+        {/* Content */}
+        <div className="prose prose-lg max-w-none">
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Introduction</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Introduction</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Welcome to Suguru Weddings. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.
+              Welcome to Suguru Weddings ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website www.suguruweddings.com and use our services.
+            </p>
+            <p className="text-gray-700 leading-relaxed">
+              Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site or use our services.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Information We Collect</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">2. Information We Collect</h2>
+            
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">2.1 Personal Information</h3>
             <p className="text-gray-700 leading-relaxed mb-4">
-              We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:
+              We collect personal information that you voluntarily provide to us when you:
             </p>
-            <ul className="list-disc list-inside text-gray-700 space-y-2 ml-4">
-              <li><strong>Identity Data:</strong> includes first name, last name, username or similar identifier.</li>
-              <li><strong>Contact Data:</strong> includes email address, telephone numbers, and mailing address.</li>
-              <li><strong>Technical Data:</strong> includes internet protocol (IP) address, browser type and version, time zone setting, browser plug-in types and versions, operating system and platform.</li>
-              <li><strong>Usage Data:</strong> includes information about how you use our website and services.</li>
-              <li><strong>Marketing and Communications Data:</strong> includes your preferences in receiving marketing from us and your communication preferences.</li>
+            <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+              <li>Contact us through our contact form</li>
+              <li>Book our photography or videography services</li>
+              <li>Subscribe to our newsletter</li>
+              <li>Engage with us on social media</li>
+              <li>Request a quote or consultation</li>
+            </ul>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              This information may include:
+            </p>
+            <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+              <li>Name and contact information (email address, phone number, mailing address)</li>
+              <li>Wedding or event details (date, venue, preferences)</li>
+              <li>Payment information (processed securely through third-party payment processors)</li>
+              <li>Photos and videos taken during your event</li>
+              <li>Any other information you choose to provide</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">2.2 Automatically Collected Information</h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              When you visit our website, we automatically collect certain information about your device, including:
+            </p>
+            <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+              <li>IP address and browser type</li>
+              <li>Operating system</li>
+              <li>Access times and pages viewed</li>
+              <li>Referring website addresses</li>
+              <li>Location data (with your permission)</li>
             </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">How We Use Your Information</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">3. How We Use Your Information</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              We will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:
+              We use the information we collect or receive to:
             </p>
-            <ul className="list-disc list-inside text-gray-700 space-y-2 ml-4">
-              <li>To provide and maintain our photography and videography services</li>
-              <li>To respond to your inquiries and booking requests</li>
-              <li>To send you information about our services, packages, and special offers</li>
-              <li>To improve our website and customer service</li>
-              <li>To process payments and manage bookings</li>
-              <li>To send you event reminders and updates about your wedding photography/videography</li>
+            <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+              <li>Provide, operate, and maintain our services</li>
+              <li>Process your bookings and manage our relationship with you</li>
+              <li>Send you updates, marketing communications, and promotional materials (with your consent)</li>
+              <li>Respond to your inquiries and provide customer support</li>
+              <li>Improve and personalize our website and services</li>
+              <li>Analyze usage trends and optimize our business operations</li>
+              <li>Prevent fraudulent transactions and protect against security threats</li>
+              <li>Comply with legal obligations</li>
             </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Photography and Video Content</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Sharing Your Information</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              By booking our services, you grant Suguru Weddings permission to use photographs and videos from your event for:
+              We may share your information in the following situations:
             </p>
-            <ul className="list-disc list-inside text-gray-700 space-y-2 ml-4">
-              <li>Portfolio display on our website and social media</li>
-              <li>Marketing and promotional materials</li>
-              <li>Professional awards and competition submissions</li>
+            <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+              <li><strong>Service Providers:</strong> We may share your information with third-party service providers who perform services on our behalf (e.g., payment processing, email delivery, hosting services)</li>
+              <li><strong>Business Transfers:</strong> We may share or transfer your information in connection with a merger, sale, or acquisition of all or part of our business</li>
+              <li><strong>Legal Requirements:</strong> We may disclose your information if required to do so by law or in response to valid requests by public authorities</li>
+              <li><strong>With Your Consent:</strong> We may share your information for any other purpose with your explicit consent</li>
             </ul>
-            <p className="text-gray-700 leading-relaxed mt-4">
-              If you prefer to keep your photos private, please let us know in writing before your event, and we will respect your wishes.
+            <p className="text-gray-700 leading-relaxed">
+              We do not sell your personal information to third parties.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Data Security</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Photography and Video Content</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed. We limit access to your personal data to those employees, agents, contractors and other third parties who have a business need to know.
+              Photos and videos taken during your event are your property. However, by engaging our services, you grant us permission to:
             </p>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Data Retention</h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              We will only retain your personal data for as long as necessary to fulfill the purposes we collected it for, including for the purposes of satisfying any legal, accounting, or reporting requirements. Event photos and videos are typically retained for a minimum of 2 years for backup purposes.
-            </p>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Your Legal Rights</h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Under certain circumstances, you have rights under data protection laws in relation to your personal data, including the right to:
-            </p>
-            <ul className="list-disc list-inside text-gray-700 space-y-2 ml-4">
-              <li>Request access to your personal data</li>
-              <li>Request correction of your personal data</li>
-              <li>Request erasure of your personal data</li>
-              <li>Object to processing of your personal data</li>
-              <li>Request restriction of processing your personal data</li>
-              <li>Request transfer of your personal data</li>
-              <li>Right to withdraw consent</li>
+            <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+              <li>Use selected images for our portfolio and marketing materials</li>
+              <li>Share photos on our website and social media platforms</li>
+              <li>Display your work in promotional materials and advertisements</li>
             </ul>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Cookies</h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Our website uses cookies to distinguish you from other users of our website. This helps us to provide you with a good experience when you browse our website and also allows us to improve our site. You can set your browser to refuse all or some browser cookies, or to alert you when websites set or access cookies.
+            <p className="text-gray-700 leading-relaxed">
+              If you prefer not to have your photos used for marketing purposes, please inform us in writing, and we will respect your wishes.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Third-Party Links</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Data Security</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Our website may include links to third-party websites, plug-ins and applications. Clicking on those links or enabling those connections may allow third parties to collect or share data about you. We do not control these third-party websites and are not responsible for their privacy statements.
+              We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:
+            </p>
+            <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+              <li>Encryption of data in transit and at rest</li>
+              <li>Regular security assessments and updates</li>
+              <li>Restricted access to personal information</li>
+              <li>Secure backup and storage systems</li>
+            </ul>
+            <p className="text-gray-700 leading-relaxed">
+              However, no method of transmission over the internet or electronic storage is 100% secure. While we strive to protect your personal information, we cannot guarantee absolute security.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Contact Us</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Data Retention</h2>
+            <p className="text-gray-700 leading-relaxed">
+              We retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. Photos and videos from your event are typically retained for a minimum of 1 year after delivery, after which they may be archived or deleted.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Your Privacy Rights</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              If you have any questions about this privacy policy or our privacy practices, please contact us:
+              Depending on your location, you may have the following rights regarding your personal information:
+            </p>
+            <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+              <li><strong>Access:</strong> Request access to your personal information</li>
+              <li><strong>Correction:</strong> Request correction of inaccurate or incomplete information</li>
+              <li><strong>Deletion:</strong> Request deletion of your personal information</li>
+              <li><strong>Restriction:</strong> Request restriction of processing your information</li>
+              <li><strong>Portability:</strong> Request transfer of your information to another service</li>
+              <li><strong>Objection:</strong> Object to processing of your information for certain purposes</li>
+              <li><strong>Withdraw Consent:</strong> Withdraw your consent at any time</li>
+            </ul>
+            <p className="text-gray-700 leading-relaxed">
+              To exercise these rights, please contact us using the contact information provided below.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Cookies and Tracking Technologies</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              We use cookies and similar tracking technologies to track activity on our website and hold certain information. Cookies are files with small amount of data that may include an anonymous unique identifier.
+            </p>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our website.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Third-Party Links</h2>
+            <p className="text-gray-700 leading-relaxed">
+              Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of these third-party sites. We encourage you to read the privacy policies of any third-party sites you visit.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Children's Privacy</h2>
+            <p className="text-gray-700 leading-relaxed">
+              Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children. If you become aware that a child has provided us with personal information, please contact us immediately.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">12. Changes to This Privacy Policy</h2>
+            <p className="text-gray-700 leading-relaxed">
+              We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date. You are advised to review this Privacy Policy periodically for any changes.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">13. Contact Us</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              If you have any questions about this Privacy Policy or our privacy practices, please contact us:
             </p>
             <div className="bg-gray-50 p-6 rounded-lg">
-              <p className="text-gray-700"><strong>Suguru Weddings</strong></p>
+              <p className="font-semibold text-gray-900 mb-2">Suguru Weddings</p>
+              <p className="text-gray-700">Banjara Hills, Hyderabad, Telangana</p>
+              <p className="text-gray-700">Phone: +91-8374962192</p>
               <p className="text-gray-700">Email: info@suguruweddings.com</p>
-              <p className="text-gray-700">Phone: +91 XXX XXX XXXX</p>
-              <p className="text-gray-700">Address: Hyderabad, Telangana, India</p>
+              <p className="text-gray-700">Website: www.suguruweddings.com</p>
             </div>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Changes to This Privacy Policy</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">14. Governing Law</h2>
             <p className="text-gray-700 leading-relaxed">
-              We may update our privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page and updating the "Last updated" date at the top of this privacy policy.
+              This Privacy Policy is governed by the laws of India. Any disputes arising from this policy will be subject to the exclusive jurisdiction of the courts in Hyderabad, Telangana.
             </p>
           </section>
+        </div>
 
-          {/* Back to Home Link */}
-          <div className="mt-12 pt-8 border-t border-gray-200 text-center">
-            <a 
-              href="/" 
-              className="inline-block bg-rose-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-rose-700 transition-colors"
-            >
-              Back to Home
-            </a>
-          </div>
+        {/* Back to Home */}
+        <div className="mt-12 pt-8 border-t">
+          <Link 
+            to="/" 
+            className="inline-flex items-center text-rose-600 hover:text-rose-700 font-semibold"
+          >
+            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Back to Home
+          </Link>
         </div>
       </div>
     </div>
