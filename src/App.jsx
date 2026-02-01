@@ -85,10 +85,10 @@ function App() {
         <Route path="/terms-of-service" element={<TermsOfService />} />
         
         {/* Local Pages */}
-        <Route path="/wedding-photographer-warangal" element={<PhotographerWarangal content={content} />} />
-        <Route path="/wedding-videographer-vijayawada" element={<VideographerVijayawada content={content} />} />
-        <Route path="/wedding-photographer-visakhapatnam" element={<PhotographerVisakhapatnam content={content} />} />
-        <Route path="/photographer-guntur" element={<PhotographerGuntur content={content} />} />
+        <Route path="/local/wedding-photographer-warangal" element={<PhotographerWarangal content={content} />} />
+        <Route path="/local/wedding-videographer-vijayawada" element={<VideographerVijayawada content={content} />} />
+        <Route path="/local/wedding-photographer-visakhapatnam" element={<PhotographerVisakhapatnam content={content} />} />
+        <Route path="/local/photographer-guntur" element={<PhotographerGuntur content={content} />} />
       </Routes>
       <Footer contact={content.contact} />
       <WhatsAppButton phone={content.contact.whatsapp} />
