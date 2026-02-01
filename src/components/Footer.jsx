@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Camera, Mail, Phone, MapPin, Instagram, Facebook, Youtube, Send } from 'lucide-react';
 
 const Footer = ({ contact }) => {
@@ -157,7 +158,9 @@ const Footer = ({ contact }) => {
             &copy; {new Date().getFullYear()} Suguru Weddings. All rights reserved.
           </p>
           <p className="text-slate-500 text-sm mt-2">
-            Made with ❤️ by <a href="https://digitalvint.com" className="hover:text-rose-400">Digital Vint</a> | <a href="/privacy-policy" className="hover:text-rose-400">Privacy Policy</a> | <a href="/terms-of-service" className="hover:text-rose-400">Terms of Service</a>
+            Made with ❤️ by <a href="https://digitalvint.com" target="_blank" rel="noopener noreferrer" className="hover:text-rose-400">Digital Vint</a> | {' '}
+            <Link to="/privacy-policy" className="hover:text-rose-400">Privacy Policy</Link> | {' '}
+            <Link to="/terms-of-service" className="hover:text-rose-400">Terms of Service</Link>
           </p>
         </div>
       </div>
