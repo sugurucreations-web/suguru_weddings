@@ -1,12 +1,21 @@
 import { useState, useEffect, useRef } from "react";
 
 export default function Invoice() {
-  const invoiceRef = useRef();
+  const invoiceRef = useRef(null);
 
   const [invoiceNumber, setInvoiceNumber] = useState("INV-2026-001");
   const [clientName, setClientName] = useState("");
   const [clientPhone, setClientPhone] = useState("");
   const [services, setServices] = useState([{ name: "", amount: "" }]);
+
+  // Load html2pdf via CDN (Vite safe)
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src =
+      "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
 
   const subtotal = services.reduce(
     (sum, s) => sum + (parseFloat(s.amount) || 0),
@@ -29,13 +38,16 @@ export default function Invoice() {
   };
 
   const downloadPDF = () => {
-    html2pdf().from(invoiceRef.current).save(`${invoiceNumber}.pdf`);
+    if (!window.html2pdf) return alert("PDF library still loading...");
+    window.html2pdf().from(invoiceRef.current).save(`${invoiceNumber}.pdf`);
   };
 
   const shareWhatsApp = () => {
     const msg = `Invoice ${invoiceNumber}
-Client: ${clientName}
-Total: ₹${total.toFixed(2)}`;
+Client: ${clientName || "Client"}
+Total: ₹${total.toFixed(2)}
+
+Suguru Weddings`;
 
     window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, "_blank");
   };
@@ -118,7 +130,7 @@ Total: ₹${total.toFixed(2)}`;
 
         {/* PREVIEW */}
         <div ref={invoiceRef} className="bg-white rounded-xl p-6 shadow">
-          <h2 className="text-xl font-bold mb-4">Suguru Weddings</h2>
+          <h2 className="text-xl font-bold mb-2">Suguru Weddings</h2>
 
           <p>Invoice: {invoiceNumber}</p>
           <p>Client: {clientName}</p>
