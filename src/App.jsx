@@ -85,9 +85,9 @@ function App() {
         <Route path="/terms-of-service" element={<TermsOfService />} />
         
         {/* Local Pages */}
-        <Route path="/local/wedding-photographer-warangal" element={<PhotographerWarangal content={content} />} />
-        <Route path="/local/wedding-videographer-vijayawada" element={<VideographerVijayawada content={content} />} />
-        <Route path="/local/wedding-photographer-visakhapatnam" element={<PhotographerVisakhapatnam content={content} />} />
+        <Route path="/local/photographer-warangal" element={<PhotographerWarangal content={content} />} />
+        <Route path="/local/videographer-vijayawada" element={<VideographerVijayawada content={content} />} />
+        <Route path="/local/photographer-visakhapatnam" element={<PhotographerVisakhapatnam content={content} />} />
         <Route path="/local/photographer-guntur" element={<PhotographerGuntur content={content} />} />
       </Routes>
       <Footer contact={content.contact} />
